@@ -1,9 +1,9 @@
-import './App.css';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { CssBaseline, Divider } from '@mui/material';
 
 import Header from "./components/Header";
 import SorobanBox from './components/SorobanBox';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <CssBaseline />
         <Header />
         <SorobanBox />
+        <Dashboard />
       </ThemeProvider>
     </StyledEngineProvider>
   );
