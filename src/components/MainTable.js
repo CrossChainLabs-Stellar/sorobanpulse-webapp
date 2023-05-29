@@ -1,8 +1,5 @@
 // import React, { useState, useEffect, useCallback, useContext, useRef, useLayoutEffect } from 'react';
 // @mui
-
-
-
 import {
     Box,
     Stack,
@@ -17,12 +14,14 @@ import {
 } from '@mui/material';
 
 import styled from '@emotion/styled';
+import merge from 'lodash/merge';
 
 // components
 // import SearchNotFound from '../SearchNotFound';
 // import TableEmpty from '../TableEmpty';
 import MainHead from './MainHead';
-
+import { CustomChart } from './chart';
+import ReactApexChart from 'react-apexcharts';
 import mockData from '../mock/mockData';
 
 // assets
@@ -32,13 +31,74 @@ import CirleFall from "../assets/CircleFall.svg"
 
 const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
     ({ theme }) => ({
-        colorPrimary: "#3E3385",
-        barColorPrimary: '#D6CEEB',
+
+
     }),
 );
 
 
 export default function MainTable() {
+    const chartOptionsVerde = merge(CustomChart(), {
+        xaxis: {
+            show: false,
+            labels: {
+                show: false
+            },
+            axisBorder: {
+                show: false
+            },
+            axisTicks: {
+                show: false
+            }
+        },
+        yaxis: {
+            show: false,
+            labels: {
+                show: false
+            },
+            axisBorder: {
+                show: false
+            },
+            axisTicks: {
+                show: false
+            }
+        },
+        grid: {
+            show: false
+        },
+        colors: ["#67A161"],
+    });
+
+    const chartOptionsRosu = merge(CustomChart(), {
+        xaxis: {
+            show: false,
+            labels: {
+                show: false
+            },
+            axisBorder: {
+                show: false
+            },
+            axisTicks: {
+                show: false
+            }
+        },
+        yaxis: {
+            show: false,
+            labels: {
+                show: false
+            },
+            axisBorder: {
+                show: false
+            },
+            axisTicks: {
+                show: false
+            }
+        },
+        grid: {
+            show: false
+        },
+        colors: ["#CA1A0D"],
+    });
 
 
     return (
@@ -240,8 +300,36 @@ export default function MainTable() {
                                             border: 'none'
                                         }}
                                     >
+                                        {graf === "verde" && (
+                                            <ReactApexChart
+                                                type="line"
+                                                series={[
+                                                    {
+                                                        name: "Desktops",
+                                                        data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+                                                    },
+                                                ]}
+                                                options={chartOptionsVerde}
+                                                height={75}
+                                                width={125}
+                                            />
+                                        )}
 
-                                        {graf}
+                                        {graf === "rosu" && (
+                                            <ReactApexChart
+                                                type="line"
+                                                series={[
+                                                    {
+                                                        name: "Desktops",
+                                                        data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+                                                    },
+                                                ]}
+                                                options={chartOptionsRosu}
+                                                height={75}
+                                                width={125}
+                                            />
+                                        )}
+
                                     </TableCell>
 
                                 </TableRow>

@@ -29,10 +29,19 @@ const createObject = () => {
         125503, 115891
     ]);
 
-    const growth = sample([
-        +53.5, -11.7
-    ]);
-    const graf = "graf"
+    const activity = sample([
+        {
+            growth: 53.5,
+            graf: 'verde'
+        },
+        {
+            growth: -11.7,
+            graf: 'rosu'
+        }
+    ])
+
+    const growth = activity.growth;
+    const graf = activity.graf;
 
     return ({
         id: id,

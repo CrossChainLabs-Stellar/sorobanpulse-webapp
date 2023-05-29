@@ -19,21 +19,65 @@ import triunghi from '../assets/triunghi.svg';
 
 
 export default function IssuesHead({ paramsCallback }) {
-    const [isDescNumber, setIsDescNumber] = useState(true);
     const [isDescName, setIsDescName] = useState(true);
-    const [isDescUpdatedAt, setIsDescUpdatedAt] = useState(true);
+    const [isDescDevelopers, setIsDescDevelopers] = useState(true);
+    const [isDescActiveDevs, setIsDescActiveDevs] = useState(true);
+    const [isDescContributions, setIsDescContributions] = useState(true);
+    const [isDescActivityGr, setIsDescActivityGr] = useState(true);
+    const [isDescActivity, setIsDescActivity] = useState(true);
 
-    const styleNumber = {
-        transform: !isDescNumber ? 'rotate(180deg)' : '',
-        transition: 'transform 150ms ease', // smooth transition
-    }
     const styleName = {
         transform: !isDescName ? 'rotate(180deg)' : '',
         transition: 'transform 150ms ease', // smooth transition
     }
-    const styleTime = {
-        transform: !isDescUpdatedAt ? 'rotate(180deg)' : '',
+
+    const styleDevelopers = {
+        transform: !isDescDevelopers ? 'rotate(180deg)' : '',
         transition: 'transform 150ms ease', // smooth transition
+    }
+
+    const styleActiveDevs = {
+        transform: !isDescActiveDevs ? 'rotate(180deg)' : '',
+        transition: 'transform 150ms ease', // smooth transition
+    }
+
+    const styleContributions = {
+        transform: !isDescContributions ? 'rotate(180deg)' : '',
+        transition: 'transform 150ms ease', // smooth transition
+    }
+
+    const styleActivityGr = {
+        transform: !isDescActivityGr ? 'rotate(180deg)' : '',
+        transition: 'transform 150ms ease', // smooth transition
+    }
+
+    const styleActivity = {
+        transform: !isDescActivity ? 'rotate(180deg)' : '',
+        transition: 'transform 150ms ease', // smooth transition
+    }
+
+    const handleSortName = () => {
+        setIsDescName(!isDescName);
+    }
+
+    const handleSortDevelopers = () => {
+        setIsDescDevelopers(!isDescDevelopers);
+    }
+
+    const handleSortActiveDevs = () => {
+        setIsDescActiveDevs(!isDescActiveDevs);
+    }
+
+    const handleSortContributions = () => {
+        setIsDescContributions(!isDescContributions);
+    }
+
+    const handleSortActivityGr = () => {
+        setIsDescActivityGr(!isDescActivityGr);
+    }
+
+    const handleSortActivity = () => {
+        setIsDescActivity(!isDescActivity);
     }
 
     // const handleSortNumber = () => {
@@ -56,6 +100,7 @@ export default function IssuesHead({ paramsCallback }) {
     //     setIsDescName(true);
     //     setIsDescUpdatedAt(!isDescUpdatedAt);
     // }
+
 
     return (
         <TableHead>
@@ -95,7 +140,7 @@ export default function IssuesHead({ paramsCallback }) {
 
                         <IconButton
                             id="basic-button"
-                            // onClick={handleSortName}
+                            onClick={handleSortName}
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem'
@@ -129,7 +174,8 @@ export default function IssuesHead({ paramsCallback }) {
                             sx={{
                                 fontWeight: 500,
                                 fontSize: 16,
-                                color: '#3E3385'
+                                color: '#3E3385',
+                                marginRight: '0.35rem',
                             }}
                         >
                             Developers
@@ -137,7 +183,7 @@ export default function IssuesHead({ paramsCallback }) {
 
                         <IconButton
                             id="basic-button"
-                            // onClick={handleSortName}
+                            onClick={handleSortDevelopers}
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem'
@@ -146,7 +192,7 @@ export default function IssuesHead({ paramsCallback }) {
                             <img
                                 src={triunghi}
                                 alt='triunghi'
-                                style={styleName}
+                                style={styleDevelopers}
                             />
                         </IconButton>
                     </Stack>
@@ -182,7 +228,7 @@ export default function IssuesHead({ paramsCallback }) {
 
                         <IconButton
                             id="basic-button"
-                            // onClick={(e) => handleSort('open_prs')}
+                            onClick={handleSortActiveDevs}
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem'
@@ -191,7 +237,7 @@ export default function IssuesHead({ paramsCallback }) {
                             <img
                                 src={triunghi}
                                 alt='triunghi'
-                                style={styleNumber}
+                                style={styleActiveDevs}
                             />
                         </IconButton>
                     </Stack>
@@ -199,7 +245,6 @@ export default function IssuesHead({ paramsCallback }) {
                         noWrap
                         sx={{
                             fontWeight: 450,
-                            opacity: 0.75,
                             marginTop: 0,
                             fontSize: 12,
                             color: '#3E3385'
@@ -228,6 +273,7 @@ export default function IssuesHead({ paramsCallback }) {
                             sx={{
                                 fontWeight: 500,
                                 fontSize: 16,
+                                marginRight: '0.35rem',
                                 color: '#3E3385'
                             }}
                         >
@@ -236,7 +282,7 @@ export default function IssuesHead({ paramsCallback }) {
 
                         <IconButton
                             id="basic-button"
-                            // onClick={handleSortName}
+                            onClick={handleSortContributions}
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem'
@@ -245,7 +291,7 @@ export default function IssuesHead({ paramsCallback }) {
                             <img
                                 src={triunghi}
                                 alt='triunghi'
-                                style={styleName}
+                                style={styleContributions}
                             />
                         </IconButton>
                     </Stack>
@@ -282,7 +328,7 @@ export default function IssuesHead({ paramsCallback }) {
 
                         <IconButton
                             id="basic-button"
-                            // onClick={(e) => handleSort('open_prs')}
+                            onClick={handleSortActivityGr}
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem'
@@ -291,7 +337,7 @@ export default function IssuesHead({ paramsCallback }) {
                             <img
                                 src={triunghi}
                                 alt='triunghi'
-                                style={styleNumber}
+                                style={styleActivityGr}
                             />
                         </IconButton>
                     </Stack>
@@ -299,7 +345,6 @@ export default function IssuesHead({ paramsCallback }) {
                         noWrap
                         sx={{
                             fontWeight: 450,
-                            opacity: 0.75,
                             marginTop: 0,
                             fontSize: 12,
                             color: '#3E3385'
@@ -315,15 +360,17 @@ export default function IssuesHead({ paramsCallback }) {
                     scope="row"
                     padding="none"
                     sx={{
-                        backgroundColor: "#FFEC8D",
                         borderTopRightRadius: '10px',
                         borderBottomRightRadius: '10px',
+                        backgroundColor: "#FFEC8D"
                     }}
                 >
                     <Stack
                         direction="row"
                         alignItems="center"
+                        sx={{ marginTop: '1.2rem', }}
                     >
+
                         <Typography
                             noWrap
                             sx={{
@@ -338,7 +385,7 @@ export default function IssuesHead({ paramsCallback }) {
 
                         <IconButton
                             id="basic-button"
-                            // onClick={handleSortUpdatedAt}
+                            onClick={handleSortActivity}
                             sx={{
                                 padding: 0,
                                 marginTop: '0.15rem'
@@ -347,11 +394,23 @@ export default function IssuesHead({ paramsCallback }) {
                             <img
                                 src={triunghi}
                                 alt='triunghi'
-                                style={styleTime}
+                                style={styleActivity}
                             />
                         </IconButton>
                     </Stack>
+                    <Typography
+                        noWrap
+                        sx={{
+                            fontWeight: 450,
+                            marginTop: 0,
+                            fontSize: 12,
+                            color: '#3E3385'
+                        }}
+                    >
+                        last 6 months
+                    </Typography>
                 </TableCell>
+
 
             </TableRow>
         </TableHead>
