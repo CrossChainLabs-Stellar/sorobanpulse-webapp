@@ -18,7 +18,7 @@ import triunghi from '../assets/triunghi.svg';
 // ----------------------------------------------------------------------
 
 
-export default function IssuesHead({ paramsCallback }) {
+export default function MainHead() {
     const [isDescName, setIsDescName] = useState(true);
     const [isDescDevelopers, setIsDescDevelopers] = useState(true);
     const [isDescActiveDevs, setIsDescActiveDevs] = useState(true);
