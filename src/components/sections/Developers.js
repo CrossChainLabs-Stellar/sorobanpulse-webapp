@@ -2,13 +2,13 @@
 import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
 import { styled } from '@mui/material/styles';
-import { Card, CardHeader, Typography } from '@mui/material';
+import { Card, CardHeader, Typography, Stack } from '@mui/material';
 import { CustomChart } from '../chart'
 // import { useState, useEffect } from 'react';
 
 
-const CHART_HEIGHT = 392;
-const LEGEND_HEIGHT = 72;
+const CHART_HEIGHT = 390;
+const LEGEND_HEIGHT = 70;
 
 const ChartWrapperStyle = styled('div')(({ theme }) => ({
     height: CHART_HEIGHT,
@@ -75,21 +75,32 @@ function Developers() {
     });
 
     return (
-        <Card sx={{ marginTop: '3rem', boxShadow: 4 }}>
+        <Card
+            sx={{
+                marginTop: '3rem',
+                boxShadow: '0px 4px 4px 0px #00000040',
+            }}
+        >
             <CardHeader
                 title={
-                    <>
-                        Developers
+                    <Stack direction='column'>
+                        <Typography
+                            variant='h6'
+                            sx={{
+                                fontWeight: 600
+                            }}
+                        >
+                            Developers
+                        </Typography>
                         <Typography
                             variant='caption'
                             sx={{
-                                marginLeft: '16rem',
                                 color: 'text.secondary',
                             }}
                         >
                             last 30 days
                         </Typography>
-                    </>
+                    </Stack>
                 }
 
             />

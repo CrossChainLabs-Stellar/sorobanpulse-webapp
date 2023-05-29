@@ -64,28 +64,32 @@ export default function IssuesHead({ paramsCallback }) {
                     height: '4rem',
                 }}
             >
-
-                <TableCell
-                    sx={{
-                        width: { xl: '6rem', lg: '4rem' },
-                    }}
-                />
-
-
                 <TableCell
                     align="left"
                     component="th"
                     scope="row"
                     padding="none"
                     sx={{
-                        width: { xl: '24rem', lg: '15rem' }
+                        width: { xl: '20rem', lg: '15rem' },
+                        backgroundColor: "#FFEC8D",
+                        paddingLeft: '3rem',
+                        borderTopLeftRadius: '10px',
+                        borderBottomLeftRadius: '10px',
                     }}
                 >
                     <Stack
                         direction="row"
                         alignItems="center"
                     >
-                        <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, marginRight: '0.35rem', }}>
+                        <Typography
+                            noWrap
+                            sx={{
+                                fontWeight: 500,
+                                fontSize: 16,
+                                marginRight: '0.35rem',
+                                color: '#3E3385'
+                            }}
+                        >
                             Project name
                         </Typography>
 
@@ -112,14 +116,22 @@ export default function IssuesHead({ paramsCallback }) {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: { xl: '20rem', lg: '15rem' }
+                        width: '15rem',
+                        backgroundColor: "#FFEC8D"
                     }}
                 >
                     <Stack
                         direction="row"
                         alignItems="center"
                     >
-                        <Typography noWrap sx={{ fontWeight: 500, fontSize: 16 }}>
+                        <Typography
+                            noWrap
+                            sx={{
+                                fontWeight: 500,
+                                fontSize: 16,
+                                color: '#3E3385'
+                            }}
+                        >
                             Developers
                         </Typography>
 
@@ -146,7 +158,8 @@ export default function IssuesHead({ paramsCallback }) {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: '20rem'
+                        width: '20rem',
+                        backgroundColor: "#FFEC8D"
                     }}
                 >
                     <Stack
@@ -161,6 +174,7 @@ export default function IssuesHead({ paramsCallback }) {
                                 fontWeight: 500,
                                 fontSize: 16,
                                 marginRight: '0.35rem',
+                                color: '#3E3385'
                             }}
                         >
                             Active developers
@@ -188,6 +202,7 @@ export default function IssuesHead({ paramsCallback }) {
                             opacity: 0.75,
                             marginTop: 0,
                             fontSize: 12,
+                            color: '#3E3385'
                         }}
                     >
                         last 30 days
@@ -200,14 +215,22 @@ export default function IssuesHead({ paramsCallback }) {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: { xl: '15rem', lg: '12rem' }
+                        width: { xl: '15rem', lg: '12rem' },
+                        backgroundColor: "#FFEC8D"
                     }}
                 >
                     <Stack
                         direction="row"
                         alignItems="center"
                     >
-                        <Typography noWrap sx={{ fontWeight: 500, fontSize: 16 }}>
+                        <Typography
+                            noWrap
+                            sx={{
+                                fontWeight: 500,
+                                fontSize: 16,
+                                color: '#3E3385'
+                            }}
+                        >
                             Contributions
                         </Typography>
 
@@ -235,13 +258,14 @@ export default function IssuesHead({ paramsCallback }) {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: '20rem'
+                        width: '20rem',
+                        backgroundColor: "#FFEC8D"
                     }}
                 >
                     <Stack
                         direction="row"
                         alignItems="center"
-                        sx={{ marginTop: '1.2rem' }}
+                        sx={{ marginTop: '1.2rem', }}
                     >
 
                         <Typography
@@ -250,6 +274,7 @@ export default function IssuesHead({ paramsCallback }) {
                                 fontWeight: 500,
                                 fontSize: 16,
                                 marginRight: '0.35rem',
+                                color: '#3E3385'
                             }}
                         >
                             Activity growth
@@ -277,6 +302,7 @@ export default function IssuesHead({ paramsCallback }) {
                             opacity: 0.75,
                             marginTop: 0,
                             fontSize: 12,
+                            color: '#3E3385'
                         }}
                     >
                         last 6 months
@@ -288,12 +314,25 @@ export default function IssuesHead({ paramsCallback }) {
                     component="th"
                     scope="row"
                     padding="none"
+                    sx={{
+                        backgroundColor: "#FFEC8D",
+                        borderTopRightRadius: '10px',
+                        borderBottomRightRadius: '10px',
+                    }}
                 >
                     <Stack
                         direction="row"
                         alignItems="center"
                     >
-                        <Typography noWrap sx={{ fontWeight: 500, fontSize: 16, marginRight: '0.35rem', }}>
+                        <Typography
+                            noWrap
+                            sx={{
+                                fontWeight: 500,
+                                fontSize: 16,
+                                marginRight: '0.35rem',
+                                color: '#3E3385'
+                            }}
+                        >
                             Activity
                         </Typography>
 

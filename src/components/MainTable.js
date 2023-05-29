@@ -26,6 +26,8 @@ import MainHead from './MainHead';
 import mockData from '../mock/mockData';
 
 // assets
+import CirleRise from "../assets/CircleRise.svg"
+import CirleFall from "../assets/CircleFall.svg"
 
 
 const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
@@ -72,7 +74,6 @@ export default function MainTable() {
                             }
                             return (
                                 <TableRow
-                                    hover
                                     key={id}
                                     tabIndex={-1}
                                 >
@@ -83,11 +84,15 @@ export default function MainTable() {
                                         scope="row"
                                         padding="none"
                                         sx={{
-                                            height: '5rem',
-                                            paddingLeft: 0,
+                                            height: '7rem',
+                                            paddingLeft: '3rem',
+                                            border: 'none'
                                         }}
                                     >
-                                        <Typography variant="subtitle2" noWrap>
+                                        <Typography
+                                            variant="subtitle2"
+                                            noWrap
+                                        >
                                             {name}
                                         </Typography>
                                     </TableCell>
@@ -97,6 +102,9 @@ export default function MainTable() {
                                         component="th"
                                         scope="row"
                                         padding="none"
+                                        sx={{
+                                            border: 'none'
+                                        }}
                                     >
                                         <Typography
                                             variant="subtitle2"
@@ -117,6 +125,9 @@ export default function MainTable() {
                                         component="th"
                                         scope="row"
                                         padding="none"
+                                        sx={{
+                                            border: 'none'
+                                        }}
                                     >
                                         <Stack
                                             direction="row"
@@ -143,6 +154,7 @@ export default function MainTable() {
                                                     width: '12rem',
                                                     height: '0.4rem',
                                                     borderRadius: 5,
+                                                    marginBottom: '1.45rem'
                                                 }}
                                                 variant='determinate'
                                                 value={devFill}
@@ -155,6 +167,9 @@ export default function MainTable() {
                                         component="th"
                                         scope="row"
                                         padding="none"
+                                        sx={{
+                                            border: 'none'
+                                        }}
                                     >
                                         <Typography variant="subtitle2" noWrap>
                                             {contributions}
@@ -166,8 +181,53 @@ export default function MainTable() {
                                         component="th"
                                         scope="row"
                                         padding="none"
+                                        sx={{
+                                            border: 'none'
+                                        }}
                                     >
-                                        {growth}
+                                        {growth >= 0 && (
+                                            <Stack direction="row">
+                                                <img
+                                                    src={CirleRise}
+                                                    alt="rise"
+                                                    style={{
+                                                        height: '1.5rem',
+                                                        marginRight: '0.5rem'
+                                                    }}
+                                                />
+                                                <Typography
+                                                    variant="subtitle2"
+                                                    noWrap
+                                                    sx={{
+                                                        marginTop: '0.2rem'
+                                                    }}
+                                                >
+                                                    {`+${growth}%`}
+                                                </Typography>
+                                            </Stack>
+                                        )}
+
+                                        {growth < 0 && (
+                                            <Stack direction="row">
+                                                <img
+                                                    src={CirleFall}
+                                                    alt="rise"
+                                                    style={{
+                                                        height: '1.5rem',
+                                                        marginRight: '0.5rem'
+                                                    }}
+                                                />
+                                                <Typography
+                                                    variant="subtitle2"
+                                                    noWrap
+                                                    sx={{
+                                                        marginTop: '0.2rem'
+                                                    }}
+                                                >
+                                                    {`${growth}%`}
+                                                </Typography>
+                                            </Stack>
+                                        )}
 
                                     </TableCell>
 
@@ -176,6 +236,9 @@ export default function MainTable() {
                                         component="th"
                                         scope="row"
                                         padding="none"
+                                        sx={{
+                                            border: 'none'
+                                        }}
                                     >
 
                                         {graf}

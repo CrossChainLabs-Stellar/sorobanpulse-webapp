@@ -30,7 +30,7 @@ const createObject = () => {
     ]);
 
     const growth = sample([
-        53.5, -11.7
+        +53.5, -11.7
     ]);
     const graf = "graf"
 

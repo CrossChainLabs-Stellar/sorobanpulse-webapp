@@ -2,7 +2,7 @@
 import merge from 'lodash/merge';
 // import { useState, useEffect } from 'react';
 import ReactApexChart from 'react-apexcharts';
-import { Card, CardHeader, Box } from '@mui/material';
+import { Card, CardHeader, Box, Typography, Stack } from '@mui/material';
 import { CustomChart } from '../chart'
 
 /**
@@ -25,8 +25,32 @@ function ActiveProjects() {
     });
 
     return (
-        <Card sx={{ marginTop: '3rem', boxShadow: 4 }}>
-            <CardHeader title="Active Repositories" />
+        <Card
+            sx={{
+                marginTop: '3rem',
+                boxShadow: '0px 4px 4px 0px #00000040'
+            }}
+        >
+            <CardHeader title={
+                <Stack direction='column'>
+                    <Typography
+                        variant='h6'
+                        sx={{
+                            fontWeight: 600
+                        }}
+                    >
+                        Active projects
+                    </Typography>
+                    <Typography
+                        variant='caption'
+                        sx={{
+                            color: 'text.secondary',
+                        }}
+                    >
+                        There are now 173 monthly active projects in the ecosystem
+                    </Typography>
+                </Stack>
+            } />
             <Box sx={{ mt: 3, mx: 3 }} dir="ltr">
                 <ReactApexChart
                     type="line"

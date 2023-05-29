@@ -1,4 +1,4 @@
-import { Container, Grid } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 // import { useState, useEffect } from 'react';
 import Footer from './Footer';
 
@@ -14,7 +14,7 @@ import ProjectsTable from "./ProjectsTable";
 export default function Dashboard() {
 
     return (
-        <Container>
+        <Box sx={{ marginX: '5rem' }}>
             <Grid container spacing={3}>
 
                 <Grid item xs={12} md={3} lg={4}>
@@ -47,6 +47,6 @@ export default function Dashboard() {
 
             </Grid>
             <Footer />
-        </Container>
+        </Box>
     );
 }

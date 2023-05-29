@@ -51,7 +51,16 @@ export default function ProjectsTable() {
                 alignItems="bottom"
                 justifyContent="space-between"
             >
-                <Typography>Projects on Soroban</Typography>
+                <Typography
+                    variant='h6'
+                    sx={{
+                        fontWeight: 600,
+                        marginTop: '2.5rem',
+                        marginLeft: '2.75rem'
+                    }}
+                >
+                    Projects on Soroban
+                </Typography>
                 <SearchStyle
                     sx={{
                         marginLeft: "auto",
