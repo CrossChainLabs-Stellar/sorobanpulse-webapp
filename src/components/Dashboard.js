@@ -8,7 +8,7 @@ import TopDevelopers from "./sections/TopDevelopers";
 import ActiveDevelopers from "./sections/ActiveDevelopers";
 import Developers from "./sections/Developers";
 import Contributions from "./sections/Contributions";
-// import ProjectsTable from "./sections/ProjectsTable";
+import ProjectsTable from "./ProjectsTable";
 
 
 export default function Dashboard() {
@@ -41,9 +41,9 @@ export default function Dashboard() {
                     <Contributions />
                 </Grid>
 
-                {/* <Grid item xs={12} lg={12}>
+                <Grid item xs={12} lg={12}>
                     <ProjectsTable />
-                </Grid> */}
+                </Grid>
 
             </Grid>
             <Footer />
