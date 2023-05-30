@@ -34,7 +34,7 @@ function CircularProgressWithLabel(props) {
                         fontWeight: 600
                     }}
                 >
-                    {`${props.insideProcent}%`}
+                    {`${props.insideprocent}%`}
                 </Typography>
             </Box>
         </Box>
@@ -84,7 +84,7 @@ function EcosystemGrowth() {
                     <CircularProgressWithLabel
                         variant="determinate"
                         value={75}
-                        insideProcent={25.5}
+                        insideprocent={25.5}
                         color='success'
                     />
                     <Stack direction="column">
@@ -118,7 +118,7 @@ function EcosystemGrowth() {
                     <CircularProgressWithLabel
                         variant="determinate"
                         value={75}
-                        insideProcent={32.8}
+                        insideprocent={32.8}
                         color='success'
                     />
                     <Stack direction="column">
@@ -152,7 +152,7 @@ function EcosystemGrowth() {
                     <CircularProgressWithLabel
                         variant="determinate"
                         value={75}
-                        insideProcent={0.5}
+                        insideprocent={0.5}
                         color='error'
                     />
                     <Stack direction="column">

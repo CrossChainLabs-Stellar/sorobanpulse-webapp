@@ -6,7 +6,7 @@ import { sample } from 'lodash';
 // ----------------------------------------------------------------------
 
 const createObject = () => {
-    const id = faker.datatype.uuid();
+    const id = faker.string.uuid();
     const name = sample([
         'stellar/rs-soroban-sdkaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         'stellar/soroban-examples'
