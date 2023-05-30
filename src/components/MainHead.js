@@ -161,7 +161,7 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: '15rem',
+                        width: { xl: '15rem', lg: '10rem' },
                         backgroundColor: "#FFEC8D"
                     }}
                 >
@@ -204,7 +204,7 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: '20rem',
+                        width: { xl: '20rem', lg: '15rem' },
                         backgroundColor: "#FFEC8D"
                     }}
                 >
@@ -304,7 +304,7 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: '20rem',
+                        width: { xl: '20rem', lg: '10rem' },
                         backgroundColor: "#FFEC8D"
                     }}
                 >

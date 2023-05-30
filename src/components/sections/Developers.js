@@ -4,10 +4,11 @@ import ReactApexChart from 'react-apexcharts';
 import { styled } from '@mui/material/styles';
 import { Card, CardHeader, Typography, Stack } from '@mui/material';
 import { CustomChart } from '../chart'
+import { number } from '../../utils/format';
 // import { useState, useEffect } from 'react';
 
 
-const CHART_HEIGHT = 390;
+const CHART_HEIGHT = 388;
 const LEGEND_HEIGHT = 70;
 
 const ChartWrapperStyle = styled('div')(({ theme }) => ({
@@ -47,27 +48,27 @@ function Developers() {
         legend: { floating: true, horizontalAlign: 'center' },
         tooltip: {
             fillSeriesColor: true,
-            // y: {
-            //     formatter: (seriesName) => number(seriesName),
-            //     title: {
-            //         formatter: (seriesName) => `${seriesName}`
-            //     }
-            // }
+            y: {
+                formatter: (seriesName) => number(seriesName),
+                title: {
+                    formatter: (seriesName) => `${seriesName}`
+                }
+            }
         },
         plotOptions: {
             pie: {
                 donut: {
                     size: '85%',
                     labels: {
-                        // value: {
-                        //     formatter: (val) => number(val)
-                        // },
-                        // total: {
-                        //     formatter: (w) => {
-                        //         const sum = w.globals.seriesTotals.reduce((a, b) => a + b, 0);
-                        //         return number(sum);
-                        //     }
-                        // }
+                        value: {
+                            formatter: (val) => number(val)
+                        },
+                        total: {
+                            formatter: (w) => {
+                                const sum = w.globals.seriesTotals.reduce((a, b) => a + b, 0);
+                                return number(sum);
+                            }
+                        }
                     }
                 }
             }

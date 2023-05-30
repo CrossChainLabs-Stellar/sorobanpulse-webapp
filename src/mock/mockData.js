@@ -8,7 +8,7 @@ import { sample } from 'lodash';
 const createObject = () => {
     const id = faker.datatype.uuid();
     const name = sample([
-        'stellar/rs-soroban-sdk',
+        'stellar/rs-soroban-sdkaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         'stellar/soroban-examples'
     ]);
     const devs = sample([

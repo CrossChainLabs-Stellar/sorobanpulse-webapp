@@ -151,6 +151,12 @@ export default function MainTable() {
                                         <Typography
                                             variant="subtitle2"
                                             noWrap
+                                            sx={{
+                                                maxWidth: { xl: '12rem', lg: '10rem' },
+                                                whiteSpace: 'nowrap',
+                                                overflow: 'hidden',
+                                                textOverflow: 'ellipsis',
+                                            }}
                                         >
                                             {name}
                                         </Typography>

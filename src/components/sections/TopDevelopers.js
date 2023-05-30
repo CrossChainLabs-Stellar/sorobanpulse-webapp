@@ -10,7 +10,7 @@ function ContributorItem({ item }) {
     return (
         <Stack direction="row" alignItems="center" spacing={2}>
             <Box component="img" src={mockAvatar} sx={{ width: 45, height: 45, borderRadius: 1.5 }} />
-            <Box sx={{ minWidth: 240 }}>
+            <Box sx={{ minWidth: { xl: 240, lg: 100 } }}>
                 <Typography variant="subtitle2" noWrap>
                     <Link
                         target="_blank"
