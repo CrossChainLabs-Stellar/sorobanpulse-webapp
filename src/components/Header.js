@@ -35,7 +35,7 @@ export default function Header() {
                         style={{
                             maxWidth: 45,
                             marginRight: '10px',
-                            marginLeft: '2.5rem'
+                            marginLeft: '5.5rem'
                         }}
                     />
                     <TextTypography>SorobanPulse</TextTypography>

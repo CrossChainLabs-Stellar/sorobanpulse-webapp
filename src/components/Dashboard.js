@@ -14,7 +14,7 @@ import ProjectsTable from "./ProjectsTable";
 export default function Dashboard() {
 
     return (
-        <Box sx={{ marginX: '5rem' }}>
+        <Box sx={{ marginX: '8rem' }}>
             <Grid container spacing={3}>
 
                 <Grid item xs={12} md={3} lg={4}>
