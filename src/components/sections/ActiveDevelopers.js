@@ -13,7 +13,7 @@ function ActiveDevelopers() {
 
     const chartOptions = merge(CustomChart(), {
         xaxis: {
-            // categories: state.categories,
+            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec', 'Jan'],
             lables: {
                 colors: ["#FFDF42", "#3E3385"],
             },
@@ -66,12 +66,12 @@ function ActiveDevelopers() {
                     type="bar"
                     series={[
                         {
-                            name: 'Net Profit',
-                            data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+                            name: 'Community',
+                            data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 105, 115, 124] 
                         },
                         {
-                            name: 'Revenue',
-                            data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+                            name: 'Core',
+                            data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 70, 70, 65]
                         },
                     ]}
                     options={chartOptions}

@@ -70,49 +70,49 @@ function TopDevelopers() {
         ))} */}
                 <ContributorItem
                     item={{
-                        dev_name: 'backlitRO',
+                        dev_name: 'Jack',
                         // avatar_url: { logo },
                         contributions: 3
                     }}
                 />
                 <ContributorItem
                     item={{
-                        dev_name: 'backlitRO',
+                        dev_name: 'Donna',
                         // avatar_url: { logo },
                         contributions: 3
                     }}
                 />
                 <ContributorItem
                     item={{
-                        dev_name: 'backlitRO',
+                        dev_name: 'Eliza',
                         // avatar_url: { logo },
                         contributions: 3
                     }}
                 />
                 <ContributorItem
                     item={{
-                        dev_name: 'backlitRO',
+                        dev_name: 'Bob',
                         // avatar_url: { logo },
                         contributions: 3
                     }}
                 />
                 <ContributorItem
                     item={{
-                        dev_name: 'backlitRO',
+                        dev_name: 'Jim',
                         // avatar_url: { logo },
                         contributions: 3
                     }}
                 />
                 <ContributorItem
                     item={{
-                        dev_name: 'backlitRO',
+                        dev_name: 'Don',
                         // avatar_url: { logo },
                         contributions: 3
                     }}
                 />
                 <ContributorItem
                     item={{
-                        dev_name: 'backlitRO',
+                        dev_name: 'Jhonatan',
                         // avatar_url: { logo },
                         contributions: 3
                     }}

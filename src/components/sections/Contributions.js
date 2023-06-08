@@ -10,9 +10,9 @@ import { CustomChart } from '../chart'
  */
 function Contributions() {
     const chartOptions = merge(CustomChart(), {
-        // xaxis: {
-        //     categories: state.categories,
-        // },
+         xaxis: {
+            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec', 'Jan'],
+         },
         colors: ["#FFDF42", "#3E3385"],
         // stroke: {
         //   width: 2,
@@ -57,12 +57,12 @@ function Contributions() {
                     type="line"
                     series={[
                         {
-                            name: "Desktops",
-                            data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+                            name: "Community",
+                            data: [130, 141, 135, 151, 149, 162, 169, 191, 248, 260, 265, 270],
                         },
                         {
-                            name: "Low - 2013",
-                            data: [12, 11, 14, 18, 17, 13, 13]
+                            name: "Core",
+                            data: [125, 122, 132, 139, 142, 140, 160, 162, 170, 175, 181, 185]
                         }
                     ]}
                     options={chartOptions}

@@ -109,7 +109,7 @@ function Developers() {
                 {/* <ReactApexChart type="donut" series={state.chartData} options={chartOptions} height={310} /> */}
                 <ReactApexChart
                     type="donut"
-                    series={[44, 55]}
+                    series={[45, 55]}
                     options={chartOptions}
                     height={310}
                 />
