@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { AppBar, Toolbar, Typography, Grid } from '@mui/material';
+import { AppBar, Toolbar, Typography, Grid, Box } from '@mui/material';
 
 import logo from "../assets/logo.svg";
 
@@ -29,13 +29,14 @@ export default function Header() {
             <ToolbarStyle disableGutters sx={{ height: '5em' }}>
                 <Grid container>
                     <Grid item xs={12} md={0} />
-                    <img
+                    <Box
+                        component="img"
                         src={logo}
                         alt=""
-                        style={{
+                        sx={{
                             maxWidth: 45,
                             marginRight: '0.7rem',
-                            marginLeft: '21rem'
+                            marginLeft: { xl: '21rem', lg: '5.5rem' }
                         }}
                     />
                     <TextTypography>SorobanPulse</TextTypography>
