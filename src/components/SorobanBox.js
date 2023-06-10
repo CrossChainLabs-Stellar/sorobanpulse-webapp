@@ -19,7 +19,7 @@ export default function SorobanBox() {
             <Typography
                 variant='h6'
                 sx={{
-                    fontWeight: 500,
+                    fontWeight: 600,
                     fontSize: 24,
                     color: '#3E3385'
                 }}

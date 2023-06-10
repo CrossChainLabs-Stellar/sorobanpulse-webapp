@@ -34,8 +34,8 @@ export default function Header() {
                         alt=""
                         style={{
                             maxWidth: 45,
-                            marginRight: '10px',
-                            marginLeft: '5.5rem'
+                            marginRight: '0.7rem',
+                            marginLeft: '21rem'
                         }}
                     />
                     <TextTypography>SorobanPulse</TextTypography>
