@@ -1,6 +1,7 @@
 /** @module TopContributors **/
 //import { useState, useEffect } from 'react';
 import { CircularProgress, Stack, Card, Typography, CardHeader, Box } from '@mui/material';
+import TinyCircle from '../TinyCircle';
 
 function CircularProgressWithLabel(props) {
     return (
@@ -77,29 +78,33 @@ function EcosystemGrowth() {
                     </Stack>
                 }
             />
-            <Stack spacing={3.37} sx={{ p: 5, pr: 0, height: '25.25rem', marginTop: '-0.5rem', marginBottom: '0.5rem' }}>
+            <Stack spacing={3.37} sx={{ p: 5, pt: 0, pr: 0, height: '25.25rem', marginTop: '-0.5rem', marginBottom: '0.5rem' }}>
                 <Stack
                     direction="row"
                     sx={{
                         //marginX: '0.5rem',
                         boxShadow: '0px 12px 24px -4px #0000001F',
-                        width: { xl: '30rem', lg: '19rem' },
+                        width: { xl: '30rem', lg: '29rem', md: '19rem' },
                         height: { xl: '30rem', lg: '19rem' },
                         borderRadius: '10px',
                     }}
                 >
-                    <CircularProgressWithLabel
+                    {/* <CircularProgressWithLabel
                         variant="determinate"
                         value={75}
                         insideprocent={25.5}
                         color='success'
-                    />
-                    <Stack direction="column">
+                    /> */}
+                    <TinyCircle fillColor="#00AB55" innerProcent={25.5} />
+                    <Stack
+                        direction="column"
+                        sx={{ marginLeft: '1rem' }}
+                    >
                         <Typography
                             sx={{
                                 fontWeight: 600,
                                 fontSize: '20px',
-                                marginTop: 'auto'
+                                marginTop: 'auto',
                             }}
                         >
                             +132
@@ -115,23 +120,28 @@ function EcosystemGrowth() {
                             Monthly active projects
                         </Typography>
                     </Stack>
+
                 </Stack>
                 <Stack
                     direction="row"
                     sx={{
                         boxShadow: '0px 12px 24px -4px #0000001F',
-                        width: { xl: '30rem', lg: '19rem' },
+                        width: { xl: '30rem', lg: '29rem', md: '19rem' },
                         height: { xl: '30rem', lg: '19rem' },
                         borderRadius: '10px',
                     }}
                 >
-                    <CircularProgressWithLabel
+                    {/* <CircularProgressWithLabel
                         variant="determinate"
                         value={75}
                         insideprocent={32.8}
                         color='success'
-                    />
-                    <Stack direction="column">
+                    /> */}
+                    <TinyCircle fillColor="#00AB55" innerProcent={32.8} />
+                    <Stack
+                        direction="column"
+                        sx={{ marginLeft: '1rem' }}
+                    >
                         <Typography
                             sx={{
                                 fontWeight: 600,
@@ -152,23 +162,29 @@ function EcosystemGrowth() {
                             Monthly active developers
                         </Typography>
                     </Stack>
+
                 </Stack>
                 <Stack
                     direction="row"
                     sx={{
                         boxShadow: '0px 12px 24px -4px #0000001F',
-                        width: { xl: '30rem', lg: '19rem' },
+                        width: { xl: '30rem', lg: '29rem', md: '19rem' },
                         height: { xl: '30rem', lg: '19rem' },
                         borderRadius: '10px',
                     }}
                 >
-                    <CircularProgressWithLabel
+                    {/* <CircularProgressWithLabel
                         variant="determinate"
                         value={75}
                         insideprocent={0.5}
                         color='error'
-                    />
-                    <Stack direction="column">
+                    /> */}
+                    <TinyCircle fillColor="#EB5757" innerProcent={0.5} />
+                    <Stack
+                        direction="column"
+                        sx={{ marginLeft: '1rem' }}
+                    >
+
                         <Typography
                             sx={{
                                 fontWeight: 600,
@@ -189,6 +205,7 @@ function EcosystemGrowth() {
                             Monthly contributions
                         </Typography>
                     </Stack>
+
                 </Stack>
             </Stack>
         </Card >
