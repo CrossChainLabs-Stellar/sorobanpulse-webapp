@@ -13,14 +13,14 @@ function ActiveProjects() {
          xaxis: {
               categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec', 'Jan'],
         },
-        colors: ["#FFDF42", "#3E3385"],
+        colors: ["#ffe54b", "#493ba4"],
         // stroke: {
         //   width: 2,
         //   colors: ["#F15A24", '#F2C1B0'],
         // },
         markers: {
-            colors: ["#FFDF42", "#3E3385"],
-            strokeColors: ["#FFDF42", "#3E3385"],
+            colors: ["#ffe54b", "#493ba4"],
+            strokeColors: ["#ffe54b", "#493ba4"],
         },
     });
 
@@ -36,6 +36,7 @@ function ActiveProjects() {
                     <Typography
                         variant='h6'
                         sx={{
+                            marginX: '1.4rem',
                             fontWeight: 600
                         }}
                     >
@@ -44,14 +45,16 @@ function ActiveProjects() {
                     <Typography
                         variant='caption'
                         sx={{
+                            marginX: '1.4rem',
                             color: 'text.secondary',
+                            fontSize: '14px',
                         }}
                     >
                         There are now 173 monthly active projects in the ecosystem
                     </Typography>
                 </Stack>
             } />
-            <Box sx={{ mt: 3, mx: 3 }} dir="ltr">
+            <Box sx={{ mt: 3, mx: 3, marginTop: '0rem', marginBottom: '1.5rem'}} dir="ltr">
                 <ReactApexChart
                     type="line"
                     series={[
@@ -65,7 +68,8 @@ function ActiveProjects() {
                         }
                     ]}
                     options={chartOptions}
-                    height={364}
+                    height={366}
+                    width={1110}
                 />
             </Box>
         </Card>

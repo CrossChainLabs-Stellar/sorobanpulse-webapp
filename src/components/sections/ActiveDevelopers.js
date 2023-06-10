@@ -15,12 +15,12 @@ function ActiveDevelopers() {
         xaxis: {
             categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec', 'Jan'],
             lables: {
-                colors: ["#FFDF42", "#3E3385"],
+                colors: ["#ffe54b", "#493ba4"],
             },
         },
-        colors: ["#FFDF42", "#3E3385"],
+        colors: ["#ffe54b", "#493ba4"],
         fill: {
-            colors: ["#FFDF42", "#3E3385"],
+            colors: ["#ffe54b", "#493ba4"],
             //colors: ["#F2C1B0", "#F15A24"],
         },
         // stroke: {

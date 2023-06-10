@@ -4,11 +4,11 @@ import Footer from './Footer';
 
 import EcosystemGrowth from "./sections/EcosystemGrowth";
 import ActiveProjects from "./sections/ActiveProjects";
-import TopDevelopers from "./sections/TopDevelopers";
-import ActiveDevelopers from "./sections/ActiveDevelopers";
-import Developers from "./sections/Developers";
-import Contributions from "./sections/Contributions";
-import ProjectsTable from "./ProjectsTable";
+//import TopDevelopers from "./sections/TopDevelopers";
+//import ActiveDevelopers from "./sections/ActiveDevelopers";
+//import Developers from "./sections/Developers";
+//import Contributions from "./sections/Contributions";
+//import ProjectsTable from "./ProjectsTable";
 
 
 export default function Dashboard() {
@@ -25,7 +25,7 @@ export default function Dashboard() {
                     <ActiveProjects />
                 </Grid>
 
-                <Grid item xs={12} md={3} lg={4}>
+              {/*  <Grid item xs={12} md={3} lg={4}>
                     <TopDevelopers />
                 </Grid>
 
@@ -43,10 +43,10 @@ export default function Dashboard() {
 
                 <Grid item xs={12} lg={12}>
                     <ProjectsTable />
-                </Grid>
+                </Grid>*/}
 
             </Grid>
-            <Footer />
+            {/*<Footer />*/}
         </Box>
     );
 }

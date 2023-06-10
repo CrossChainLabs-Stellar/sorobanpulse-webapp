@@ -9,7 +9,7 @@ function CircularProgressWithLabel(props) {
                 variant="determinate"
                 size={75}
                 sx={{
-                    marginX: '1.5rem',
+                    marginX: '1.2rem',
                     marginY: '0.4rem',
                 }}
                 {...props}
@@ -30,6 +30,7 @@ function CircularProgressWithLabel(props) {
                     variant="caption"
                     component="div"
                     color="text.primary"
+                    fontSize='16px'
                     sx={{
                         fontWeight: 600
                     }}
@@ -57,6 +58,7 @@ function EcosystemGrowth() {
                         <Typography
                             variant='h6'
                             sx={{
+                                marginX: '1.4rem',
                                 fontWeight: 600
                             }}
                         >
@@ -65,7 +67,9 @@ function EcosystemGrowth() {
                         <Typography
                             variant='caption'
                             sx={{
+                                marginX: '1.4rem',
                                 color: 'text.secondary',
+                                fontSize: '14px',
                             }}
                         >
                             last 6 months
@@ -73,7 +77,7 @@ function EcosystemGrowth() {
                     </Stack>
                 }
             />
-            <Stack spacing={3.37} sx={{ p: 5, pr: 0, height: '25.25rem' }}>
+            <Stack spacing={3.37} sx={{ p: 5, pr: 0, height: '25.25rem', marginTop: '-0.5rem', marginBottom: '0.5rem' }}>
                 <Stack
                     direction="row"
                     sx={{
@@ -94,6 +98,7 @@ function EcosystemGrowth() {
                         <Typography
                             sx={{
                                 fontWeight: 600,
+                                fontSize: '20px',
                                 marginTop: 'auto'
                             }}
                         >
@@ -130,6 +135,7 @@ function EcosystemGrowth() {
                         <Typography
                             sx={{
                                 fontWeight: 600,
+                                fontSize: '20px',
                                 marginTop: 'auto'
                             }}
                         >
@@ -166,6 +172,7 @@ function EcosystemGrowth() {
                         <Typography
                             sx={{
                                 fontWeight: 600,
+                                fontSize: '20px',
                                 marginTop: 'auto'
                             }}
                         >

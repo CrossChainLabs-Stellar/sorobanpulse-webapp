@@ -8,7 +8,7 @@ export default function SorobanBox() {
             sx={{
                 marginTop: '5rem',
                 height: '4rem',
-                backgroundColor: "#FFEC8D",
+                backgroundColor: "#ffeb75",
                 width: '100%',
                 display: 'flex',
                 justifyContent: 'center',
@@ -20,7 +20,6 @@ export default function SorobanBox() {
                 variant='h6'
                 sx={{
                     fontWeight: 600,
-                    fontSize: 24,
                     color: '#3E3385'
                 }}
             >
