@@ -7,10 +7,10 @@ function CircularProgressWithLabel(props) {
         <Box sx={{ position: 'relative', display: 'inline-flex', }}>
             <CircularProgress
                 variant="determinate"
-                size={65}
+                size={75}
                 sx={{
                     marginX: '1.5rem',
-                    marginY: '0.3rem'
+                    marginY: '0.4rem',
                 }}
                 {...props}
             />
@@ -73,12 +73,15 @@ function EcosystemGrowth() {
                     </Stack>
                 }
             />
-            <Stack spacing={5.37} sx={{ p: 5, pr: 0, height: '25.25rem' }}>
+            <Stack spacing={3.37} sx={{ p: 5, pr: 0, height: '25.25rem' }}>
                 <Stack
                     direction="row"
                     sx={{
+                        //marginX: '0.5rem',
                         boxShadow: '0px 12px 24px -4px #0000001F',
                         width: { xl: '30rem', lg: '19rem' },
+                        height: { xl: '30rem', lg: '19rem' },
+                        borderRadius: '10px',
                     }}
                 >
                     <CircularProgressWithLabel
@@ -112,7 +115,9 @@ function EcosystemGrowth() {
                     direction="row"
                     sx={{
                         boxShadow: '0px 12px 24px -4px #0000001F',
-                        width: { xl: '30rem', lg: '19rem' }
+                        width: { xl: '30rem', lg: '19rem' },
+                        height: { xl: '30rem', lg: '19rem' },
+                        borderRadius: '10px',
                     }}
                 >
                     <CircularProgressWithLabel
@@ -146,7 +151,9 @@ function EcosystemGrowth() {
                     direction="row"
                     sx={{
                         boxShadow: '0px 12px 24px -4px #0000001F',
-                        width: { xl: '30rem', lg: '19rem' }
+                        width: { xl: '30rem', lg: '19rem' },
+                        height: { xl: '30rem', lg: '19rem' },
+                        borderRadius: '10px',
                     }}
                 >
                     <CircularProgressWithLabel
