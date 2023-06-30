@@ -54,7 +54,7 @@ function Contributions() {
                 </Stack>
             }
             />
-            <Box sx={{ mt: 3, mx: 3, marginTop: '0rem', marginBottom: '1.5rem' }} dir="ltr">
+            <Box sx={{ mt: 3, ml: 3, mr: 4, marginTop: '0rem', marginBottom: '1.5rem' }} dir="ltr">
                 <ReactApexChart
                     type="line"
                     series={[

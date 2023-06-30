@@ -9,8 +9,24 @@ function ContributorItem({ item }) {
     const { dev_name, contributions } = item;
     return (
         <Stack direction="row" alignItems="center" spacing={2}>
-            <Box component="img" src={mockAvatar} sx={{ width: 45, height: 45, borderRadius: 1.5 }} />
-            <Box sx={{ minWidth: { xl: 240, lg: 100 } }}>
+            <Box
+                component="img"
+                src={mockAvatar}
+                sx={{
+                    width: 45,
+                    height: 45,
+                    borderRadius: 1.5,
+                    marginLeft: '1rem'
+                }}
+            />
+            <Box
+                sx={{
+                    minWidth: {
+                        xl: 200,
+                        lg: 100
+                    },
+                }}
+            >
                 <Typography variant="subtitle2" noWrap>
                     <Link
                         target="_blank"
