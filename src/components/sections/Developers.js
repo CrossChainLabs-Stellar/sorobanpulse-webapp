@@ -88,7 +88,8 @@ function Developers() {
                         <Typography
                             variant='h6'
                             sx={{
-                                fontWeight: 600
+                                fontWeight: 600,
+                                marginX: '1.4rem',
                             }}
                         >
                             Developers
@@ -97,6 +98,7 @@ function Developers() {
                             variant='caption'
                             sx={{
                                 color: 'text.secondary',
+                                marginX: '1.4rem',
                             }}
                         >
                             last 30 days

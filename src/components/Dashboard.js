@@ -16,7 +16,8 @@ export default function Dashboard() {
     return (
         <Box sx={{
             marginX: {
-                xl: '24rem',
+                xxl: '24rem',
+                xl: '20rem',
                 lg: '8rem',
                 lg_xl: '8rem',
                 md: '4rem',

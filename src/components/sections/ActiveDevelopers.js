@@ -44,6 +44,7 @@ function ActiveDevelopers() {
                         <Typography
                             variant='h6'
                             sx={{
+                                marginX: '1.4rem',
                                 fontWeight: 600
                             }}
                         >
@@ -52,6 +53,7 @@ function ActiveDevelopers() {
                         <Typography
                             variant='caption'
                             sx={{
+                                marginX: '1.4rem',
                                 color: 'text.secondary',
                             }}
                         >
@@ -60,14 +62,14 @@ function ActiveDevelopers() {
                     </Stack>
                 }
             />
-            <Box sx={{ mt: 3, mx: 3 }} dir="ltr">
+            <Box sx={{ mt: 3, mx: 3, marginTop: '0rem', marginBottom: '1.5rem' }} dir="ltr">
                 {/* <ReactApexChart type="bar" series={state.data} options={chartOptions} height={364} /> */}
                 <ReactApexChart
                     type="bar"
                     series={[
                         {
                             name: 'Community',
-                            data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 105, 115, 124] 
+                            data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 105, 115, 124]
                         },
                         {
                             name: 'Core',
@@ -75,7 +77,7 @@ function ActiveDevelopers() {
                         },
                     ]}
                     options={chartOptions}
-                    height={364}
+                    height={366}
                 />
             </Box>
         </Card>

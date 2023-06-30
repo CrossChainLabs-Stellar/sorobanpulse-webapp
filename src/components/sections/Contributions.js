@@ -10,9 +10,9 @@ import { CustomChart } from '../chart'
  */
 function Contributions() {
     const chartOptions = merge(CustomChart(), {
-         xaxis: {
+        xaxis: {
             categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec', 'Jan'],
-         },
+        },
         colors: ["#FFDF42", "#3E3385"],
         // stroke: {
         //   width: 2,
@@ -36,7 +36,8 @@ function Contributions() {
                     <Typography
                         variant='h6'
                         sx={{
-                            fontWeight: 600
+                            fontWeight: 600,
+                            marginX: '1.4rem',
                         }}
                     >
                         Contributions
@@ -44,6 +45,7 @@ function Contributions() {
                     <Typography
                         variant='caption'
                         sx={{
+                            marginX: '1.4rem',
                             color: 'text.secondary',
                         }}
                     >
@@ -52,7 +54,7 @@ function Contributions() {
                 </Stack>
             }
             />
-            <Box sx={{ mt: 3, mx: 3 }} dir="ltr">
+            <Box sx={{ mt: 3, mx: 3, marginTop: '0rem', marginBottom: '1.5rem' }} dir="ltr">
                 <ReactApexChart
                     type="line"
                     series={[

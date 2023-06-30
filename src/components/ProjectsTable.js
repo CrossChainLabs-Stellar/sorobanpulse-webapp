@@ -66,7 +66,7 @@ export default function ProjectsTable() {
                         marginLeft: "auto",
                         marginTop: 'auto',
                         marginBottom: '0.25rem',
-                        marginRight: '1rem'
+                        marginRight: '2.75rem'
                     }}
                     value={search}
                     onChange={(e) => handleSearch(e)}
