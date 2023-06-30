@@ -27,6 +27,8 @@ import mockData from '../mock/mockData';
 import CirleRise from "../assets/CircleRise.svg"
 import CirleFall from "../assets/CircleFall.svg"
 
+import { fNumber } from '../utils/format';
+
 
 const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
     ({ theme }) => ({
@@ -105,7 +107,7 @@ export default function MainTable() {
             <TableContainer
                 sx={{
                     minWidth: 800,
-                    maxHeight: '40rem',
+                    maxHeight: '86rem',
                 }}
             // ref={tableEl}
             >
@@ -187,7 +189,7 @@ export default function MainTable() {
                                                 textOverflow: 'ellipsis',
                                             }}
                                         >
-                                            {maxDevs}
+                                            {fNumber(maxDevs)}
                                         </Typography>
                                     </TableCell>
 
@@ -243,7 +245,7 @@ export default function MainTable() {
                                         }}
                                     >
                                         <Typography variant="subtitle2" noWrap>
-                                            {contributions}
+                                            {fNumber(contributions)}
                                         </Typography>
                                     </TableCell>
 
@@ -308,7 +310,8 @@ export default function MainTable() {
                                         scope="row"
                                         padding="none"
                                         sx={{
-                                            border: 'none'
+                                            border: 'none',
+                                            paddingRight: '3rem',
                                         }}
                                     >
                                         {graf === "verde" && (
