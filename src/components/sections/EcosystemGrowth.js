@@ -9,7 +9,7 @@ function EcosystemGrowth() {
     return (
         <Card
             sx={{
-                marginTop: '3rem',
+                marginTop: '4rem',
                 boxShadow: '0px 4px 4px 0px #00000040',
             }}
         >
