@@ -1,47 +1,7 @@
-/** @module TopContributors **/
+/** @module EcosystemGrowth **/
 //import { useState, useEffect } from 'react';
-import { CircularProgress, Stack, Card, Typography, CardHeader, Box } from '@mui/material';
+import { Stack, Card, Typography, CardHeader } from '@mui/material';
 import TinyCircle from '../TinyCircle';
-
-function CircularProgressWithLabel(props) {
-    return (
-        <Box sx={{ position: 'relative', display: 'inline-flex', }}>
-            <CircularProgress
-                variant="determinate"
-                size={75}
-                sx={{
-                    marginX: '1.2rem',
-                    marginY: '0.4rem',
-                }}
-                {...props}
-            />
-            <Box
-                sx={{
-                    top: 0,
-                    left: 0,
-                    bottom: 0,
-                    right: 0,
-                    position: 'absolute',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                }}
-            >
-                <Typography
-                    variant="caption"
-                    component="div"
-                    color="text.primary"
-                    fontSize='16px'
-                    sx={{
-                        fontWeight: 600
-                    }}
-                >
-                    {`${props.insideprocent}%`}
-                </Typography>
-            </Box>
-        </Box>
-    );
-}
 
 
 function EcosystemGrowth() {
@@ -82,19 +42,12 @@ function EcosystemGrowth() {
                 <Stack
                     direction="row"
                     sx={{
-                        //marginX: '0.5rem',
                         boxShadow: '0px 12px 24px -4px #0000001F',
-                        width: { xl: '30rem', lg: '29rem', md: '19rem' },
+                        width: '93%',
                         height: { xl: '30rem', lg: '19rem' },
                         borderRadius: '10px',
                     }}
                 >
-                    {/* <CircularProgressWithLabel
-                        variant="determinate"
-                        value={75}
-                        insideprocent={25.5}
-                        color='success'
-                    /> */}
                     <TinyCircle fillColor="#00AB55" innerProcent={25.5} />
                     <Stack
                         direction="column"
@@ -126,17 +79,11 @@ function EcosystemGrowth() {
                     direction="row"
                     sx={{
                         boxShadow: '0px 12px 24px -4px #0000001F',
-                        width: { xl: '30rem', lg: '29rem', md: '19rem' },
+                        width: '93%',
                         height: { xl: '30rem', lg: '19rem' },
                         borderRadius: '10px',
                     }}
                 >
-                    {/* <CircularProgressWithLabel
-                        variant="determinate"
-                        value={75}
-                        insideprocent={32.8}
-                        color='success'
-                    /> */}
                     <TinyCircle fillColor="#00AB55" innerProcent={32.8} />
                     <Stack
                         direction="column"
@@ -168,17 +115,11 @@ function EcosystemGrowth() {
                     direction="row"
                     sx={{
                         boxShadow: '0px 12px 24px -4px #0000001F',
-                        width: { xl: '30rem', lg: '29rem', md: '19rem' },
+                        width: '93%',
                         height: { xl: '30rem', lg: '19rem' },
                         borderRadius: '10px',
                     }}
                 >
-                    {/* <CircularProgressWithLabel
-                        variant="determinate"
-                        value={75}
-                        insideprocent={0.5}
-                        color='error'
-                    /> */}
                     <TinyCircle fillColor="#EB5757" innerProcent={0.5} />
                     <Stack
                         direction="column"

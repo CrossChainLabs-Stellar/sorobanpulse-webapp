@@ -152,7 +152,13 @@ export default function MainTable() {
                                             variant="subtitle2"
                                             noWrap
                                             sx={{
-                                                maxWidth: { xl: '12rem', lg: '10rem' },
+                                                maxWidth: {
+                                                    xxl: '12rem',
+                                                    xl: '12rem',
+                                                    lg: '10rem',
+                                                    md: '75%',
+                                                    sm: '75%'
+                                                },
                                                 whiteSpace: 'nowrap',
                                                 overflow: 'hidden',
                                                 textOverflow: 'ellipsis',

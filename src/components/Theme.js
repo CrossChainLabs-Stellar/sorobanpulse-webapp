@@ -30,7 +30,9 @@ export default createTheme({
             sm: 600,
             md: 900,
             lg: 1400,
+            lg_xl: 1650,
             xl: 1900,
+            xxl: 2560,
         },
     },
 });

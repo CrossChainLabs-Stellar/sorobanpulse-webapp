@@ -115,7 +115,13 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: { xl: '20rem', lg: '16rem' },
+                        width: {
+                            xxl: '30rem',
+                            xl: '20rem',
+                            lg_xl: '18rem',
+                            lg: '16rem',
+                            md: '12rem'
+                        },
                         backgroundColor: "#FFEC8D",
                         paddingLeft: '3rem',
                         borderTopLeftRadius: '10px',
@@ -161,7 +167,13 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: { xl: '15rem', lg: '10rem' },
+                        width: {
+                            xxl: '20rem',
+                            xl: '15rem',
+                            lg_xl: '14rem',
+                            lg: '10rem',
+                            md: '10rem',
+                        },
                         backgroundColor: "#FFEC8D"
                     }}
                 >
@@ -204,8 +216,14 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: { xl: '20rem', lg: '18rem' },
-                        backgroundColor: "#FFEC8D"
+                        width: {
+                            xxl: '30rem',
+                            xl: '20rem',
+                            lg_xl: '20rem',
+                            lg: '18rem',
+                            md: '15rem'
+                        },
+                        backgroundColor: "#FFEC8D",
                     }}
                 >
                     <Stack
@@ -260,8 +278,14 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: { xl: '15rem', lg: '12rem' },
-                        backgroundColor: "#FFEC8D"
+                        width: {
+                            xxl: '20rem',
+                            xl: '15rem',
+                            lg_xl: '14rem',
+                            lg: '12rem',
+                            md: '10rem'
+                        },
+                        backgroundColor: "#FFEC8D",
                     }}
                 >
                     <Stack
@@ -304,8 +328,14 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: { xl: '20rem', lg: '15rem' },
-                        backgroundColor: "#FFEC8D"
+                        width: {
+                            xxl: '30rem',
+                            xl: '20rem',
+                            lg_xl: '18rem',
+                            lg: '15rem',
+                            md: '12rem'
+                        },
+                        backgroundColor: "#FFEC8D",
                     }}
                 >
                     <Stack
@@ -362,7 +392,8 @@ export default function MainHead() {
                     sx={{
                         borderTopRightRadius: '10px',
                         borderBottomRightRadius: '10px',
-                        backgroundColor: "#FFEC8D"
+                        backgroundColor: "#FFEC8D",
+                        paddingRight: '3rem',
                     }}
                 >
                     <Stack

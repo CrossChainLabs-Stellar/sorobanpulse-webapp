@@ -10,8 +10,8 @@ import { CustomChart } from '../chart'
  */
 function ActiveProjects() {
     const chartOptions = merge(CustomChart(), {
-         xaxis: {
-              categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec', 'Jan'],
+        xaxis: {
+            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec', 'Jan'],
         },
         colors: ["#ffe54b", "#493ba4"],
         // stroke: {
@@ -54,7 +54,7 @@ function ActiveProjects() {
                     </Typography>
                 </Stack>
             } />
-            <Box sx={{ mt: 3, mx: 3, marginTop: '0rem', marginBottom: '1.5rem'}} dir="ltr">
+            <Box sx={{ mt: 3, mx: 3, marginTop: '0rem', marginBottom: '1.5rem' }} dir="ltr">
                 <ReactApexChart
                     type="line"
                     series={[
@@ -69,7 +69,7 @@ function ActiveProjects() {
                     ]}
                     options={chartOptions}
                     height={366}
-                    width={1110}
+                // width={1110}
                 />
             </Box>
         </Card>
