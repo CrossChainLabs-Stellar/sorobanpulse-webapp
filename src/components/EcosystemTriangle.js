@@ -9,7 +9,8 @@ import {
     List,
     MenuItem,
     Paper,
-    Divider
+    Divider,
+    Typography
 } from '@mui/material';
 
 
@@ -75,31 +76,53 @@ export default function EcosystemTriangle() {
                 anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                 transformOrigin={{ vertical: "top", horizontal: "right" }}
                 MenuListProps={{
-                    style: {
+                    sx: {
                         backgroundColor: "#fff",
                         padding: '0px',
                     }
                 }}
             >
-                <Box>
-                    <Box>
-                        <Stack
-                            direction="row"
-                            alignItems="center"
+                <Box
+                    sx={{
+                        width: '12rem',
+                        backgroundColor: '#fff',
+                    }}
+                >
+                    <Stack
+                        direction="row"
+                        alignItems="center"
+                        sx={{
+                            height: '2.5rem'
+                        }}
+                    >
+                        <Typography
+                            noWrap
+                            variant='h6'
+                            sx={{
+                                fontWeight: '500',
+                            }}
                         >
-                            <Box>
-                                Filter by status
-                            </Box>
-                            <IconButton onClick={handleClose} style={{ marginLeft: 'auto' }}>
-                                <img src={x} alt='x' />
-                            </IconButton>
-                        </Stack>
-                        <Divider />
-                    </Box >
-                    <Paper>
-                        <List disablePadding={true}>
+                            Filter by status
+                        </Typography>
+                        <IconButton onClick={handleClose} style={{ marginLeft: 'auto' }}>
+                            <img src={x} alt='x' />
+                        </IconButton>
+                    </Stack>
+                    <Divider />
+                    <Paper
+                        sx={{
+                            backgroundColor: "#fff",
+                            height: '7.5rem',
+                        }}
+                    >
+                        <List
+                            disablePadding={true}
+                        >
                             <MenuItem
-                                style={{ backgroundColor: '#FFFFFF', }}
+                                sx={{
+                                    backgroundColor: '#FFFFFF',
+                                    height: '3rem',
+                                }}
                                 onClick={() => handleFilterClose('closed')}
                             >
                                 <img
@@ -109,7 +132,10 @@ export default function EcosystemTriangle() {
                             </MenuItem>
                             <Divider />
                             <MenuItem
-                                style={{ backgroundColor: '#FFFFFF', }}
+                                sx={{
+                                    backgroundColor: '#FFFFFF',
+                                    height: '3rem',
+                                }}
                                 onClick={() => handleFilterClose('open')}
                             >
                                 <img
@@ -117,7 +143,6 @@ export default function EcosystemTriangle() {
                                     alt="Core"
                                 />
                             </MenuItem>
-                            <Divider />
                         </List>
                     </Paper>
                 </Box>
