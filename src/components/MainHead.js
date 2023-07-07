@@ -11,6 +11,7 @@ import {
 
 
 // components
+import EcosystemTriangle from './EcosystemTriangle';
 
 // assets
 import triunghi from '../assets/triunghi.svg';
@@ -115,13 +116,14 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: {
-                            xxl: '30rem',
-                            xl: '20rem',
-                            lg_xl: '18rem',
-                            lg: '16rem',
-                            md: '12rem'
-                        },
+                        // width: {
+                        //     xxl: '30rem',
+                        //     xl: '20rem',
+                        //     lg_xl: '18rem',
+                        //     lg: '20%',
+                        //     md: '7.5rem'
+                        // },
+                        width: '20%',
                         backgroundColor: "#FFEC8D",
                         paddingLeft: '3rem',
                         borderTopLeftRadius: '10px',
@@ -167,13 +169,51 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: {
-                            xxl: '20rem',
-                            xl: '15rem',
-                            lg_xl: '14rem',
-                            lg: '10rem',
-                            md: '10rem',
-                        },
+                        // width: {
+                        //     xxl: '20rem',
+                        //     xl: '15rem',
+                        //     lg_xl: '14rem',
+                        //     lg: '12%',
+                        //     md: '10rem',
+                        // },
+                        width: '12%',
+                        backgroundColor: "#FFEC8D"
+                    }}
+                >
+                    <Stack
+                        direction="row"
+                        alignItems="center"
+                    >
+                        <Typography
+                            noWrap
+                            sx={{
+                                fontWeight: 500,
+                                fontSize: 16,
+                                marginRight: '0.35rem',
+                                color: '#3E3385'
+                            }}
+                        >
+                            Ecosystem
+                        </Typography>
+
+                        <EcosystemTriangle />
+                    </Stack>
+                </TableCell>
+
+                <TableCell
+                    align="left"
+                    component="th"
+                    scope="row"
+                    padding="none"
+                    sx={{
+                        // width: {
+                        //     xxl: '20rem',
+                        //     xl: '15rem',
+                        //     lg_xl: '14rem',
+                        //     lg: '13%',
+                        //     md: '10rem',
+                        // },
+                        width: '13%',
                         backgroundColor: "#FFEC8D"
                     }}
                 >
@@ -216,13 +256,14 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: {
-                            xxl: '30rem',
-                            xl: '20rem',
-                            lg_xl: '20rem',
-                            lg: '18rem',
-                            md: '15rem'
-                        },
+                        // width: {
+                        //     xxl: '30rem',
+                        //     xl: '20rem',
+                        //     lg_xl: '20rem',
+                        //     lg: '20%',
+                        //     md: '15rem'
+                        // },
+                        width: '20%',
                         backgroundColor: "#FFEC8D",
                     }}
                 >
@@ -278,13 +319,14 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: {
-                            xxl: '20rem',
-                            xl: '15rem',
-                            lg_xl: '14rem',
-                            lg: '12rem',
-                            md: '10rem'
-                        },
+                        // width: {
+                        //     xxl: '20rem',
+                        //     xl: '15rem',
+                        //     lg_xl: '14rem',
+                        //     lg: '13%',
+                        //     md: '10rem'
+                        // },
+                        width: '13%',
                         backgroundColor: "#FFEC8D",
                     }}
                 >
@@ -328,13 +370,14 @@ export default function MainHead() {
                     scope="row"
                     padding="none"
                     sx={{
-                        width: {
-                            xxl: '30rem',
-                            xl: '20rem',
-                            lg_xl: '18rem',
-                            lg: '15rem',
-                            md: '12rem'
-                        },
+                        // width: {
+                        //     xxl: '30rem',
+                        //     xl: '20rem',
+                        //     lg_xl: '18rem',
+                        //     lg: '12%',
+                        //     md: '12rem'
+                        // },
+                        width: '12%',
                         backgroundColor: "#FFEC8D",
                     }}
                 >

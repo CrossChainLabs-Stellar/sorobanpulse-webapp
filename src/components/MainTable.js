@@ -24,8 +24,10 @@ import ReactApexChart from 'react-apexcharts';
 import mockData from '../mock/mockData';
 
 // assets
-import CirleRise from "../assets/CircleRise.svg"
-import CirleFall from "../assets/CircleFall.svg"
+import CirleRise from "../assets/CircleRise.svg";
+import CirleFall from "../assets/CircleFall.svg";
+import Comunity from "../assets/Comunity.svg";
+import Core from "../assets/Core.svg";
 
 import { fNumber } from '../utils/format';
 
@@ -120,6 +122,7 @@ export default function MainTable() {
                             const {
                                 id,
                                 name,
+                                ecosystem,
                                 maxDevs,
                                 devNumber,
                                 contributions,
@@ -168,6 +171,29 @@ export default function MainTable() {
                                         >
                                             {name}
                                         </Typography>
+                                    </TableCell>
+
+                                    <TableCell
+                                        align="left"
+                                        component="th"
+                                        scope="row"
+                                        padding="none"
+                                    >
+
+                                        {ecosystem === 'core' ?
+                                            (
+                                                <img
+                                                    src={Core}
+                                                    alt="Core"
+                                                />
+                                            ) :
+                                            (
+                                                <img
+                                                    src={Comunity}
+                                                    alt="Comunity"
+                                                />
+                                            )
+                                        }
                                     </TableCell>
 
                                     <TableCell

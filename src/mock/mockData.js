@@ -11,6 +11,10 @@ const createObject = () => {
         'stellar/rs-soroban-sdkaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         'stellar/soroban-examples'
     ]);
+    const ecosystem = sample([
+        'comunity',
+        'core'
+    ]);
     const devs = sample([
         {
             maxDevs: 4503,
@@ -46,6 +50,7 @@ const createObject = () => {
     return ({
         id: id,
         name: name,
+        ecosystem: ecosystem,
         maxDevs: maxDevs,
         devNumber: devNumber,
         contributions: contributions,
