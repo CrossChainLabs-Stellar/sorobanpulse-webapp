@@ -1,8 +1,22 @@
 /** @module TopDevelopers **/
 // import { useState, useEffect } from 'react';
-import { Box, Stack, Card, Typography, CardHeader, Link } from '@mui/material';
+import { Box, Stack, Card, Typography, CardHeader, Link, Select, MenuItem, InputBase } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import mockAvatar from '../../mock/mockAvatar.svg';
 
-import mockAvatar from '../../mock/mockAvatar.svg'
+const StyledInput = styled(InputBase)(({ theme }) => ({
+    '& .MuiInputBase-input': {
+        borderRadius: 5,
+        border: '1px solid #ced4da',
+        paddingLeft: '0.5rem',
+        paddingTop: '0rem',
+        paddingBottom: '0rem',
+        textAlign: 'center',
+        fontSize: 13,
+        height: '1.45rem',
+    },
+
+}));
 
 function ContributorItem({ item }) {
     // const { dev_name, avatar_url, contributions } = item;
@@ -59,28 +73,98 @@ function TopDevelopers() {
                 boxShadow: '0px 4px 4px 0px #00000040',
             }}
         >
-            <CardHeader title={
-                <Stack direction='column'>
-                    <Typography
-                        variant='h6'
+            <CardHeader
+                title={
+                    <Stack direction='column'>
+                        <Typography
+                            variant='h6'
+                            sx={{
+                                fontWeight: 600,
+                                marginX: '1.4rem',
+                            }}
+                        >
+                            Top developers
+                        </Typography>
+                        <Typography
+                            variant='caption'
+                            sx={{
+                                color: 'text.secondary',
+                                marginX: '1.4rem',
+                            }}
+                        >
+                            last 30 days
+                        </Typography>
+                    </Stack>
+                }
+                action={
+                    <Select
+                        defaultValue={1}
                         sx={{
-                            fontWeight: 600,
-                            marginX: '1.4rem',
+                            width: '7rem',
+                            marginRight: '0.3rem',
+                        }}
+                        input={<StyledInput />}
+                        MenuProps={{
+                            sx: {
+                                "&& .Mui-selected": {
+                                    backgroundColor: '#ffffff',
+                                    '&:hover': {
+                                        backgroundColor: '#ffffff',
+                                    },
+                                    '&:active': {
+                                        backgroundColor: '#ffffff',
+                                    },
+                                    '&:focus': {
+                                        backgroundColor: '#ffffff',
+                                    },
+                                },
+                                "&& .MuiList-root": {
+                                    backgroundColor: '#ffffff',
+                                }
+                            }
                         }}
                     >
-                        Top developers
-                    </Typography>
-                    <Typography
-                        variant='caption'
-                        sx={{
-                            color: 'text.secondary',
-                            marginX: '1.4rem',
-                        }}
-                    >
-                        last 30 days
-                    </Typography>
-                </Stack>
-            }
+                        <MenuItem
+                            value={1}
+                            sx={{
+                                backgroundColor: '#ffffff',
+                                '&:hover': {
+                                    backgroundColor: '#ffffff',
+                                },
+                            }}
+                        >
+                            {'Community'}
+                        </MenuItem>
+                        <MenuItem
+                            value={2}
+                            sx={{
+                                backgroundColor: '#ffffff',
+                                '&:hover': {
+                                    backgroundColor: '#ffffff',
+                                },
+                            }}
+                        >
+                            {'Core'}
+                        </MenuItem>
+                        <MenuItem
+                            value={3}
+                            sx={{
+                                backgroundColor: '#ffffff',
+                                '&:hover': {
+                                    backgroundColor: '#ffffff',
+                                },
+                            }}
+                        >
+                            {'All'}
+                        </MenuItem>
+                    </Select>
+                }
+                sx={{
+                    '& .MuiCardHeader-action': {
+                        marginTop: '0.075rem',
+                        marginRight: '0.5rem'
+                    }
+                }}
             />
             <Stack spacing={5} sx={{ pl: 3, pr: 0, height: '25.25rem', overflowY: 'scroll' }}>
                 {/* {state.top_contributors?.map((item) => (
