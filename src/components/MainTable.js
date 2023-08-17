@@ -1,4 +1,4 @@
-// import React, { useState, useEffect, useCallback, useContext, useRef, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 // @mui
 import {
     Box,
@@ -30,6 +30,7 @@ import Comunity from "../assets/Comunity.svg";
 import Core from "../assets/Core.svg";
 
 import { fNumber } from '../utils/format';
+import { Client } from '../utils/client';
 
 
 const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
@@ -41,6 +42,24 @@ const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
 
 
 export default function MainTable() {
+    const [state, setState] = useState({
+        loading: true,
+        projects: []
+    });
+
+    useEffect(() => {
+        const client = new Client();
+
+        client.get('projects').then((response) => {
+            let projects = response;
+
+            setState({
+                loading: false,
+                projects: projects,
+            });
+        });
+    }, [setState]);
+
     const chartOptionsVerde = merge(CustomChart(), {
         xaxis: {
             show: false,
@@ -118,24 +137,31 @@ export default function MainTable() {
                     <MainHead />
 
                     <TableBody>
-                        {mockData.map((row, index) => {
+                        {state.projects?.map((item, id) => {
                             const {
-                                id,
                                 name,
-                                ecosystem,
-                                maxDevs,
-                                devNumber,
+                                is_core_project,
+                                active_contributors,
                                 contributions,
-                                growth,
-                                graf } = row;
+                                developers,
+                                commits 
+                            } = item;
 
-                            let devFill;
-                            if (maxDevs === 0) {
-                                devFill = 0;
+                            let activeDevelopersPercentage;
+                            if (active_contributors === 0) {
+                                activeDevelopersPercentage = 0;
+                            } else {
+                                activeDevelopersPercentage = (active_contributors / developers) * 100;
                             }
-                            else {
-                                devFill = ((devNumber * 100) / (maxDevs + devNumber));
-                            }
+
+                            let growth = 10;
+                            let graf = 'verde';
+                            let activity = [];
+                            /*if (commits?.length > 6) {
+                                commits.pop();
+                                commits.splice(0, commits.length - 6);
+                            }*/
+
                             return (
                                 <TableRow
                                     key={id}
@@ -180,7 +206,7 @@ export default function MainTable() {
                                         padding="none"
                                     >
 
-                                        {ecosystem === 'core' ?
+                                        {is_core_project ?
                                             (
                                                 <img
                                                     src={Core}
@@ -215,7 +241,7 @@ export default function MainTable() {
                                                 textOverflow: 'ellipsis',
                                             }}
                                         >
-                                            {fNumber(maxDevs)}
+                                            {fNumber(developers)}
                                         </Typography>
                                     </TableCell>
 
@@ -240,7 +266,7 @@ export default function MainTable() {
                                                 noWrap
                                                 sx={{ marginLeft: "auto" }}
                                             >
-                                                {devNumber}
+                                                {active_contributors}
                                             </Typography>
                                         </Stack>
                                         <Box
@@ -256,7 +282,7 @@ export default function MainTable() {
                                                     marginBottom: '1.45rem'
                                                 }}
                                                 variant='determinate'
-                                                value={devFill}
+                                                value={activeDevelopersPercentage}
                                             />
                                         </Box>
                                     </TableCell>
@@ -346,7 +372,7 @@ export default function MainTable() {
                                                 series={[
                                                     {
                                                         name: "Desktops",
-                                                        data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+                                                        data: activity,
                                                     },
                                                 ]}
                                                 options={chartOptionsVerde}

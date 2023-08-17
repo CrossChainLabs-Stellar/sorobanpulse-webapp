@@ -1,19 +1,66 @@
 /** @module CommitsChart **/
 import merge from 'lodash/merge';
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import { Card, CardHeader, Box, Typography, Stack } from '@mui/material';
 import { CustomChart } from '../chart'
-
+import { Client } from '../../utils/client';
+import { number } from '../../utils/format';
 
 /**
- * Bar chart that displays the number of commits for each month over the last year.
+ * Bar chart that displays the number of contributors for each month over the last year.
  */
 function ActiveDevelopers() {
+    const [state, setState] = useState({
+        loading: true,
+        categories: [],
+        total: 0,
+        data: [
+            { name: 'Core', data: [] },
+            { name: 'Community ', data: [] }
+        ]
+    });
+
+    useEffect(() => {
+        const client = new Client();
+
+        client.get('active_contributors').then((response) => {
+            let contributors = response;
+            contributors.pop();
+            if (contributors.length > 12) {
+                contributors.splice(0, contributors.length - 12);
+            }
+
+            let total = 0;
+            if (contributors.length > 0) {
+                total = parseInt(contributors[contributors.length - 1].active_contributors_core) + parseInt(contributors[contributors.length - 1].active_contributors_ecosystem);
+            }
+
+            let coreData = [];
+            let ecosystemData = [];
+            let categories = [];
+
+            contributors.forEach(item => {
+                coreData.push(item.active_contributors_core ? item.active_contributors_core : 0);
+                ecosystemData.push(item.active_contributors_ecosystem ? item.active_contributors_ecosystem : 0);
+                categories.push(item.display_month.slice(0, -3));
+            });
+
+            setState({
+                loading: false,
+                categories: categories,
+                total: total,
+                data: [
+                    { name: 'Core', data: coreData },
+                    { name: 'Community', data: ecosystemData }
+                ]
+            });
+        });
+    }, [setState]);
 
     const chartOptions = merge(CustomChart(), {
         xaxis: {
-            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec', 'Jan'],
+            categories: state.categories,
             lables: {
                 colors: ["#ffe54b", "#493ba4"],
             },
@@ -57,7 +104,7 @@ function ActiveDevelopers() {
                                 color: 'text.secondary',
                             }}
                         >
-                            There are now 1,635 monthly active developers in the ecosystem
+                            There are now {number(state.total)} monthly active developers in the ecosystem
                         </Typography>
                     </Stack>
                 }
@@ -66,16 +113,7 @@ function ActiveDevelopers() {
                 {/* <ReactApexChart type="bar" series={state.data} options={chartOptions} height={364} /> */}
                 <ReactApexChart
                     type="bar"
-                    series={[
-                        {
-                            name: 'Community',
-                            data: [76, 85, 101, 98, 87, 105, 91, 114, 94, 105, 115, 124]
-                        },
-                        {
-                            name: 'Core',
-                            data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 70, 70, 65]
-                        },
-                    ]}
+                    series={state.data}
                     options={chartOptions}
                     height={366}
                 />

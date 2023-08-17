@@ -5,7 +5,8 @@ import { styled } from '@mui/material/styles';
 import { Card, CardHeader, Typography, Stack } from '@mui/material';
 import { CustomChart } from '../chart'
 import { number } from '../../utils/format';
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Client } from '../../utils/client';
 
 
 const CHART_HEIGHT = 388;
@@ -31,6 +32,17 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
  * Pie chart that displays the number of issues.
  */
 function Developers() {
+    const [state, setState] = useState({ loading: true, chartData: [0, 0] });
+
+    useEffect(() => {
+      const client = new Client();
+      client.get('statistics').then((statistics) => {
+        let new_contributors = parseInt((statistics?.new_contributors) ? statistics?.new_contributors : 0);
+        let active_contributors = parseInt((statistics?.active_contributors) ? statistics?.active_contributors : 0);
+  
+        setState({ loading: false, chartData: [new_contributors, active_contributors] });
+      });
+    }, [setState]);
 
     const chartOptions = merge(CustomChart(), {
         colors: [
@@ -111,7 +123,7 @@ function Developers() {
                 {/* <ReactApexChart type="donut" series={state.chartData} options={chartOptions} height={310} /> */}
                 <ReactApexChart
                     type="donut"
-                    series={[45, 55]}
+                    series={state.chartData}
                     options={chartOptions}
                     height={310}
                 />

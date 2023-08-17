@@ -1,8 +1,8 @@
 /** @module TopDevelopers **/
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Stack, Card, Typography, CardHeader, Link, Select, MenuItem, InputBase } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import mockAvatar from '../../mock/mockAvatar.svg';
+import { Client } from '../../utils/client';
 
 const StyledInput = styled(InputBase)(({ theme }) => ({
     '& .MuiInputBase-input': {
@@ -19,13 +19,13 @@ const StyledInput = styled(InputBase)(({ theme }) => ({
 }));
 
 function ContributorItem({ item }) {
-    // const { dev_name, avatar_url, contributions } = item;
-    const { dev_name, contributions } = item;
+    const { dev_name, avatar_url, contributions, is_core_developer } = item;
+
     return (
         <Stack direction="row" alignItems="center" spacing={2}>
             <Box
                 component="img"
-                src={mockAvatar}
+                src={avatar_url}
                 sx={{
                     width: 45,
                     height: 45,
@@ -65,6 +65,34 @@ function ContributorItem({ item }) {
  * List of top 10 contributors of the month.
  */
 function TopDevelopers() {
+    const [state, setState] = useState({
+        loading: true, 
+        top_contributors: []
+      });
+
+    const [selectedValue, setSelectedValue] = useState(3); 
+    
+      useEffect(() => {
+        const client = new Client();
+        let endpoint = 'top_contributors';
+        if (selectedValue == 1) {
+            endpoint += '?type=community';
+        } else if (selectedValue == 2) {
+            endpoint += '?type=core';
+        }
+
+        client.get(endpoint).then((response) => {
+          let top_contributors = response;
+          setState({
+            loading: false,
+            top_contributors: top_contributors.slice(0, 10),
+          });
+        });
+      }, [selectedValue, setState]);
+
+    const handleSelectChange = (event) => {
+        setSelectedValue(event.target.value);
+    };
 
     return (
         <Card
@@ -98,7 +126,9 @@ function TopDevelopers() {
                 }
                 action={
                     <Select
-                        defaultValue={1}
+                        value={selectedValue}
+                        onChange={handleSelectChange}
+                        defaultValue={3}
                         sx={{
                             width: '7rem',
                             marginRight: '0.3rem',
@@ -167,58 +197,9 @@ function TopDevelopers() {
                 }}
             />
             <Stack spacing={5} sx={{ pl: 3, pr: 0, height: '25.25rem', overflowY: 'scroll' }}>
-                {/* {state.top_contributors?.map((item) => (
-          <ContributorItem key={item.dev_name} item={item} />
-        ))} */}
-                <ContributorItem
-                    item={{
-                        dev_name: 'Jack',
-                        // avatar_url: { logo },
-                        contributions: 3
-                    }}
-                />
-                <ContributorItem
-                    item={{
-                        dev_name: 'Donna',
-                        // avatar_url: { logo },
-                        contributions: 3
-                    }}
-                />
-                <ContributorItem
-                    item={{
-                        dev_name: 'Eliza',
-                        // avatar_url: { logo },
-                        contributions: 3
-                    }}
-                />
-                <ContributorItem
-                    item={{
-                        dev_name: 'Bob',
-                        // avatar_url: { logo },
-                        contributions: 3
-                    }}
-                />
-                <ContributorItem
-                    item={{
-                        dev_name: 'Jim',
-                        // avatar_url: { logo },
-                        contributions: 3
-                    }}
-                />
-                <ContributorItem
-                    item={{
-                        dev_name: 'Don',
-                        // avatar_url: { logo },
-                        contributions: 3
-                    }}
-                />
-                <ContributorItem
-                    item={{
-                        dev_name: 'Jhonatan',
-                        // avatar_url: { logo },
-                        contributions: 3
-                    }}
-                />
+            {state.top_contributors?.map((item) => (
+                <ContributorItem key={item.dev_name} item={item} />
+            ))} 
             </Stack>
         </Card>
     );

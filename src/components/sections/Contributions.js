@@ -1,17 +1,67 @@
 /** @module ContributionsChart **/
 import merge from 'lodash/merge';
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import { Card, CardHeader, Box, Typography, Stack } from '@mui/material';
 import { CustomChart } from '../chart'
+import { Client } from '../../utils/client';
+import { number } from '../../utils/format';
+
 
 /**
  * Line chart that displays the number of active developers and active repositories for each month over the last year.
  */
 function Contributions() {
+    const [state, setState] = useState({
+        loading: true,
+        categories: [],
+        total: 0,
+        data: [
+            { name: 'Core', data: [] },
+            { name: 'Community ', data: [] }
+        ]
+    });
+
+    useEffect(() => {
+        const client = new Client();
+
+        client.get('commits').then((response) => {
+            let commits = response;
+            commits.pop();
+            if (commits.length > 12) {
+                commits.splice(0, commits.length - 12);
+            }
+
+            let total = 0;
+            if (commits.length > 0) {
+                total = parseInt(commits[commits.length - 1].commits_core) + parseInt(commits[commits.length - 1].commits_ecosystem);
+            }
+
+            let coreData = [];
+            let ecosystemData = [];
+            let categories = [];
+
+            commits.forEach(item => {
+                coreData.push(item.commits_core ? item.commits_core : 0);
+                ecosystemData.push(item.commits_ecosystem ? item.commits_ecosystem : 0);
+                categories.push(item.display_month.slice(0, -3));
+            });
+
+            setState({
+                loading: false,
+                categories: categories,
+                total: total,
+                data: [
+                    { name: 'Core', data: coreData },
+                    { name: 'Community', data: ecosystemData }
+                ]
+            });
+        });
+    }, [setState]);
+
     const chartOptions = merge(CustomChart(), {
         xaxis: {
-            categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec', 'Jan'],
+            categories: state.categories,
         },
         colors: ["#FFDF42", "#3E3385"],
         // stroke: {
@@ -49,7 +99,7 @@ function Contributions() {
                             color: 'text.secondary',
                         }}
                     >
-                        There are now 64K+ monthly contributions in the ecosystem
+                        There are now {number(state.total)} monthly contributions in the ecosystem
                     </Typography>
                 </Stack>
             }
@@ -57,16 +107,7 @@ function Contributions() {
             <Box sx={{ mt: 3, ml: 3, mr: 4, marginTop: '0rem', marginBottom: '1.5rem' }} dir="ltr">
                 <ReactApexChart
                     type="line"
-                    series={[
-                        {
-                            name: "Community",
-                            data: [130, 141, 135, 151, 149, 162, 169, 191, 248, 260, 265, 270],
-                        },
-                        {
-                            name: "Core",
-                            data: [125, 122, 132, 139, 142, 140, 160, 162, 170, 175, 181, 185]
-                        }
-                    ]}
+                    series={state.data}
                     options={chartOptions}
                     height={364}
                 />
