@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import React from "react";
 // @mui
 import {
     Box,
@@ -31,6 +32,7 @@ import Core from "../assets/Core.svg";
 
 import { fNumber } from '../utils/format';
 import { Client } from '../utils/client';
+import { Waypoint } from 'react-waypoint';
 
 
 const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
@@ -44,34 +46,34 @@ const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
 export default function MainTable({ search }) {
     const [state, setState] = useState({
         loading: true,
+        total: 0,
         projects: []
     });
     const [params, setParams] = useState({});
-    const [lastOffset, setLastOffset] = useState(0);
+    const [offset, setOffset] = useState(0);
 
     useEffect(() => {
         const client = new Client();
+        params.offset = offset;
 
-        if (!search) {
-            params.search = undefined;
-        }
-        else if (params.search !== search) {
-            params.search = search;
-            params.offset = 0;
-            setLastOffset(0);
-        }
-
-        console.log(params)
+        console.log(params);
 
         client.get('projects', params).then((response) => {
-            let projects = response?.list;
-
-            setState({
-                loading: false,
-                projects: projects,
-            });
+            if (params.offset > 0) {
+                setState({
+                    loading: false,
+                    total: response?.total,
+                    projects: [...state.projects, ...response.list],
+                });
+            } else {
+                setState({
+                    loading: false,
+                    total: response?.total,
+                    projects: response?.list,
+                });
+            } 
         });
-    }, [search, params, setState]);
+    }, [search, params, offset, setState]);
 
     const chartOptionsVerde = merge(CustomChart(), {
         xaxis: {
@@ -138,15 +140,22 @@ export default function MainTable({ search }) {
     const paramsCallback = (new_params) => {
         setState({ 
             loading: true, 
+            total : 0,
             projects: [] 
         });
         new_params.offset = 0;
+        setOffset(0);
         setParams({
             ...params,
             ...new_params,
         });
     }
 
+    const handleWaypointEnter = () => {
+        if (offset < state.total) {
+            setOffset(offset + 20);
+        }
+    };
 
     return (
         <>
@@ -195,6 +204,7 @@ export default function MainTable({ search }) {
                             }
 
                             return (
+                                <React.Fragment key={id}>
                                 <TableRow
                                     key={id}
                                     tabIndex={-1}
@@ -390,8 +400,11 @@ export default function MainTable({ search }) {
                                     </TableCell>
 
                                 </TableRow>
+                                <Waypoint onEnter={handleWaypointEnter} />
+                                </React.Fragment>
                             );
                         })}
+                        
                     </TableBody>
 
 
