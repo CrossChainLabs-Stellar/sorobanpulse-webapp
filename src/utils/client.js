@@ -8,10 +8,14 @@ export class Client {
       this.api = API;
   }
 
-  async get(endpoint) {
-    console.log(this.api + endpoint);
+  async get(endpoint, params = null) {
+    let response;
+    if (params) {
+      response = await axios.get(this.api + endpoint, { params: params });
+    } else {
+      response = await axios.get(this.api + endpoint);
+    }
 
-    const response = await axios.get(this.api + endpoint);
 
     if (!response || response.status !== 200) {
       return undefined;

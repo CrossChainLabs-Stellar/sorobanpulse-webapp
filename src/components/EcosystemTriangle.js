@@ -17,7 +17,7 @@ import {
 
 // assets
 import x from '../assets/x.svg';
-import Comunity from '../assets/Comunity.svg';
+import Community from '../assets/Community.svg';
 import Core from '../assets/Core.svg';
 import clearFilter from '../assets/clearFilter.svg';
 import triunghi from '../assets/triunghi.svg';
@@ -25,7 +25,7 @@ import triunghi from '../assets/triunghi.svg';
 
 
 
-export default function EcosystemTriangle() {
+export default function EcosystemTriangle({ paramsCallback }) {
     const [anchorEl, setAnchorEl] = useState(null);
     const [isSorted, setIsSorted] = useState(false);
     const open = Boolean(anchorEl);
@@ -35,10 +35,10 @@ export default function EcosystemTriangle() {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    function handleFilterClose(status) {
+    function handleFilterClose(ecosystem) {
         handleClose();
         setIsSorted(true);
-        // paramsCallback({ status: status });
+        paramsCallback({ ecosystem: ecosystem });
     }
 
     return (
@@ -61,7 +61,7 @@ export default function EcosystemTriangle() {
                     id="basic-button"
                     onClick={() => {
                         setIsSorted(false);
-                        // paramsCallback({ status: undefined });
+                        paramsCallback({ ecosystem: undefined });
                     }}
                     style={{ padding: 0, marginLeft: '0.25rem' }}
                 >
@@ -102,7 +102,7 @@ export default function EcosystemTriangle() {
                                 fontWeight: '500',
                             }}
                         >
-                            Filter by status
+                            Filter by ecosystem
                         </Typography>
                         <IconButton onClick={handleClose} style={{ marginLeft: 'auto' }}>
                             <img src={x} alt='x' />
@@ -123,11 +123,11 @@ export default function EcosystemTriangle() {
                                     backgroundColor: '#FFFFFF',
                                     height: '3rem',
                                 }}
-                                onClick={() => handleFilterClose('closed')}
+                                onClick={() => handleFilterClose('community')}
                             >
                                 <img
-                                    src={Comunity}
-                                    alt="Comunity"
+                                    src={Community}
+                                    alt="Community"
                                 />
                             </MenuItem>
                             <Divider />
@@ -136,7 +136,7 @@ export default function EcosystemTriangle() {
                                     backgroundColor: '#FFFFFF',
                                     height: '3rem',
                                 }}
-                                onClick={() => handleFilterClose('open')}
+                                onClick={() => handleFilterClose('core')}
                             >
                                 <img
                                     src={Core}

@@ -42,7 +42,6 @@ export default function ProjectsTable() {
         setSearch(event.target.value);
     }
 
-
     return (
         <Paper className="container">
             <Stack
@@ -79,7 +78,7 @@ export default function ProjectsTable() {
                 />
             </Stack>
 
-            <MainTable />
+            <MainTable search={search}/>
 
         </Paper >
     );

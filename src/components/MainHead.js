@@ -19,7 +19,7 @@ import triunghi from '../assets/triunghi.svg';
 // ----------------------------------------------------------------------
 
 
-export default function MainHead() {
+export default function MainHead({ paramsCallback }) {
     const [isDescName, setIsDescName] = useState(true);
     const [isDescDevelopers, setIsDescDevelopers] = useState(true);
     const [isDescActiveDevs, setIsDescActiveDevs] = useState(true);
@@ -58,50 +58,70 @@ export default function MainHead() {
     }
 
     const handleSortName = () => {
+        paramsCallback({ sortBy: 'name', sortType: isDescName ? 'asc' : 'desc' });
+
         setIsDescName(!isDescName);
+        setIsDescDevelopers(true);
+        setIsDescActiveDevs(true);
+        setIsDescContributions(true);
+        setIsDescActivityGr(true);
+        setIsDescActivity(true);
     }
 
     const handleSortDevelopers = () => {
+        paramsCallback({ sortBy: 'developers', sortType: isDescDevelopers ? 'asc' : 'desc' });
+        
+        setIsDescName(true);
         setIsDescDevelopers(!isDescDevelopers);
+        setIsDescActiveDevs(true);
+        setIsDescContributions(true);
+        setIsDescActivityGr(true);
+        setIsDescActivity(true);
     }
 
     const handleSortActiveDevs = () => {
+        paramsCallback({ sortBy: 'active_contributors', sortType: isDescActiveDevs ? 'asc' : 'desc' });
+        
+        setIsDescName(true);
+        setIsDescDevelopers(true);
         setIsDescActiveDevs(!isDescActiveDevs);
+        setIsDescContributions(true);
+        setIsDescActivityGr(true);
+        setIsDescActivity(true);
     }
 
     const handleSortContributions = () => {
+        paramsCallback({ sortBy: 'contributions', sortType: isDescContributions ? 'asc' : 'desc' });
+        
+        setIsDescName(true);
+        setIsDescDevelopers(true);
+        setIsDescActiveDevs(true);
         setIsDescContributions(!isDescContributions);
+        setIsDescActivityGr(true);
+        setIsDescActivity(true);
     }
 
     const handleSortActivityGr = () => {
+        paramsCallback({ sortBy: 'activity_growth', sortType: isDescActivityGr ? 'asc' : 'desc' });
+        
+        setIsDescName(true);
+        setIsDescDevelopers(true);
+        setIsDescActiveDevs(true);
+        setIsDescContributions(true);
         setIsDescActivityGr(!isDescActivityGr);
+        setIsDescActivity(true);
     }
 
     const handleSortActivity = () => {
+        paramsCallback({ sortBy: 'activity_growth', sortType: isDescActivity ? 'asc' : 'desc' });
+        
+        setIsDescName(true);
+        setIsDescDevelopers(true);
+        setIsDescActiveDevs(true);
+        setIsDescContributions(true);
+        setIsDescActivityGr(true);
         setIsDescActivity(!isDescActivity);
     }
-
-    // const handleSortNumber = () => {
-    //     paramsCallback({ sortBy: 'number', sortType: isDescNumber ? 'asc' : 'desc' });
-    //     setIsDescNumber(!isDescNumber);
-    //     setIsDescName(true);
-    //     setIsDescUpdatedAt(true);
-    // }
-
-    // const handleSortName = () => {
-    //     paramsCallback({ sortBy: 'title', sortType: isDescName ? 'asc' : 'desc' });
-    //     setIsDescNumber(true);
-    //     setIsDescName(!isDescName);
-    //     setIsDescUpdatedAt(true);
-    // }
-
-    // const handleSortUpdatedAt = () => {
-    //     paramsCallback({ sortBy: 'updated_at', sortType: isDescUpdatedAt ? 'asc' : 'desc' });
-    //     setIsDescNumber(true);
-    //     setIsDescName(true);
-    //     setIsDescUpdatedAt(!isDescUpdatedAt);
-    // }
-
 
     return (
         <TableHead>
@@ -196,7 +216,7 @@ export default function MainHead() {
                             Ecosystem
                         </Typography>
 
-                        <EcosystemTriangle />
+                        <EcosystemTriangle paramsCallback={paramsCallback}/>
                     </Stack>
                 </TableCell>
 

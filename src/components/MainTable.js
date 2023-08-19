@@ -26,7 +26,7 @@ import mockData from '../mock/mockData';
 // assets
 import CirleRise from "../assets/CircleRise.svg";
 import CirleFall from "../assets/CircleFall.svg";
-import Comunity from "../assets/Comunity.svg";
+import Comunity from "../assets/Community.svg";
 import Core from "../assets/Core.svg";
 
 import { fNumber } from '../utils/format';
@@ -41,24 +41,37 @@ const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
 );
 
 
-export default function MainTable() {
+export default function MainTable({ search }) {
     const [state, setState] = useState({
         loading: true,
         projects: []
     });
+    const [params, setParams] = useState({});
+    const [lastOffset, setLastOffset] = useState(0);
 
     useEffect(() => {
         const client = new Client();
 
-        client.get('projects').then((response) => {
-            let projects = response;
+        if (!search) {
+            params.search = undefined;
+        }
+        else if (params.search !== search) {
+            params.search = search;
+            params.offset = 0;
+            setLastOffset(0);
+        }
+
+        console.log(params)
+
+        client.get('projects', params).then((response) => {
+            let projects = response?.list;
 
             setState({
                 loading: false,
                 projects: projects,
             });
         });
-    }, [setState]);
+    }, [search, params, setState]);
 
     const chartOptionsVerde = merge(CustomChart(), {
         xaxis: {
@@ -122,6 +135,18 @@ export default function MainTable() {
         colors: ["#CA1A0D"],
     });
 
+    const paramsCallback = (new_params) => {
+        setState({ 
+            loading: true, 
+            projects: [] 
+        });
+        new_params.offset = 0;
+        setParams({
+            ...params,
+            ...new_params,
+        });
+    }
+
 
     return (
         <>
@@ -134,7 +159,7 @@ export default function MainTable() {
             >
                 <Table stickyHeader>
 
-                    <MainHead />
+                    <MainHead paramsCallback={paramsCallback} />
 
                     <TableBody>
                         {state.projects?.map((item, id) => {
@@ -144,6 +169,7 @@ export default function MainTable() {
                                 active_contributors,
                                 contributions,
                                 developers,
+                                activity_growth,
                                 commits 
                             } = item;
 
@@ -154,13 +180,19 @@ export default function MainTable() {
                                 activeDevelopersPercentage = (active_contributors / developers) * 100;
                             }
 
-                            let growth = 10;
-                            let graf = 'verde';
                             let activity = [];
-                            /*if (commits?.length > 6) {
-                                commits.pop();
-                                commits.splice(0, commits.length - 6);
-                            }*/
+                            if (commits?.length) {
+                                for (const c of commits) {
+                                    activity.push(parseInt(c.commits));
+                                }
+                            }
+
+                            let growth_trend = true;
+                            if (activity?.length > 0 && activity_growth) {
+                                if (activity_growth < 0) {
+                                    growth_trend = false;
+                                }
+                            }
 
                             return (
                                 <TableRow
@@ -310,10 +342,10 @@ export default function MainTable() {
                                             border: 'none'
                                         }}
                                     >
-                                        {growth >= 0 && (
+                                        { /*(activity_growth > 0 || activity_growth < 0) && */ (
                                             <Stack direction="row">
                                                 <img
-                                                    src={CirleRise}
+                                                    src={(growth_trend == true) ? CirleRise : CirleFall}
                                                     alt="rise"
                                                     style={{
                                                         height: '1.5rem',
@@ -327,33 +359,10 @@ export default function MainTable() {
                                                         marginTop: '0.2rem'
                                                     }}
                                                 >
-                                                    {`+${growth}%`}
+                                                    {`${(growth_trend == true) ? '+' : ''}${activity_growth}%`}
                                                 </Typography>
                                             </Stack>
                                         )}
-
-                                        {growth < 0 && (
-                                            <Stack direction="row">
-                                                <img
-                                                    src={CirleFall}
-                                                    alt="rise"
-                                                    style={{
-                                                        height: '1.5rem',
-                                                        marginRight: '0.5rem'
-                                                    }}
-                                                />
-                                                <Typography
-                                                    variant="subtitle2"
-                                                    noWrap
-                                                    sx={{
-                                                        marginTop: '0.2rem'
-                                                    }}
-                                                >
-                                                    {`${growth}%`}
-                                                </Typography>
-                                            </Stack>
-                                        )}
-
                                     </TableCell>
 
                                     <TableCell
@@ -366,36 +375,18 @@ export default function MainTable() {
                                             paddingRight: '3rem',
                                         }}
                                     >
-                                        {graf === "verde" && (
                                             <ReactApexChart
                                                 type="line"
                                                 series={[
                                                     {
                                                         name: "Desktops",
-                                                        data: activity,
+                                                        data: activity//activity ? activity : [],
                                                     },
                                                 ]}
-                                                options={chartOptionsVerde}
+                                                options={growth_trend ? chartOptionsVerde : chartOptionsRosu}
                                                 height={75}
                                                 width={125}
                                             />
-                                        )}
-
-                                        {graf === "rosu" && (
-                                            <ReactApexChart
-                                                type="line"
-                                                series={[
-                                                    {
-                                                        name: "Desktops",
-                                                        data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
-                                                    },
-                                                ]}
-                                                options={chartOptionsRosu}
-                                                height={75}
-                                                width={125}
-                                            />
-                                        )}
-
                                     </TableCell>
 
                                 </TableRow>
