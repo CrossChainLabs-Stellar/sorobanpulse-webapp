@@ -5,6 +5,8 @@ const arcBlue = "#0B72B9";
 const arcOrange = "#FFBA60";
 const FONT_PRIMARY = 'Public Sans, sans-serif';
 
+
+
 export default createTheme({
     palette: {
         common: {
@@ -59,5 +61,5 @@ export default createTheme({
             lineHeight: 22 / 14,
             fontSize: pixelToRem(14),
         },
-    }
+    },
 });

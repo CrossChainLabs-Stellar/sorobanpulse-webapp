@@ -96,7 +96,7 @@ function EcosystemGrowth() {
                 ecosystem_growth_commits_percentage = (ecosystem_growth_commits_value / previous_total_commits) * 100;
             }
 
-            return {                
+            return {
                 ecosystem_growth_developers_value,
                 ecosystem_growth_developers_percentage,
                 ecosystem_growth_projects_value,
@@ -165,7 +165,7 @@ function EcosystemGrowth() {
                         borderRadius: '10px',
                     }}
                 >
-                    <TinyCircle fillColor="#00AB55" innerProcent={number(state.ecosystem_growth_projects_percentage)} />
+                    <TinyCircle fillColor={state.ecosystem_growth_projects_value >= 0 ? "#00AB55" : "#EB5757"} innerProcent={number(state.ecosystem_growth_projects_percentage)} />
                     <Stack
                         direction="column"
                         sx={{ marginLeft: '1rem' }}
@@ -201,7 +201,7 @@ function EcosystemGrowth() {
                         borderRadius: '10px',
                     }}
                 >
-                    <TinyCircle fillColor="#00AB55" innerProcent={number(state.ecosystem_growth_developers_percentage)} />
+                    <TinyCircle fillColor={state.ecosystem_growth_developers_value >= 0 ? "#00AB55" : "#EB5757"} innerProcent={number(state.ecosystem_growth_developers_percentage)} />
                     <Stack
                         direction="column"
                         sx={{ marginLeft: '1rem' }}
@@ -237,7 +237,7 @@ function EcosystemGrowth() {
                         borderRadius: '10px',
                     }}
                 >
-                    <TinyCircle fillColor="#EB5757" innerProcent={number(state.ecosystem_growth_commits_percentage)} />
+                    <TinyCircle fillColor={state.ecosystem_growth_commits_value >= 0 ? "#00AB55" : "#EB5757"} innerProcent={number(state.ecosystem_growth_commits_percentage)} />
                     <Stack
                         direction="column"
                         sx={{ marginLeft: '1rem' }}

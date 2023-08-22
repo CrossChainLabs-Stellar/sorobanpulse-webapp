@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 
 import styled from '@emotion/styled';
+import { alpha } from '@mui/material/styles';
 import merge from 'lodash/merge';
 
 // components
@@ -71,7 +72,7 @@ export default function MainTable({ search }) {
                     total: response?.total,
                     projects: response?.list,
                 });
-            } 
+            }
         });
     }, [search, params, offset, setState]);
 
@@ -138,10 +139,10 @@ export default function MainTable({ search }) {
     });
 
     const paramsCallback = (new_params) => {
-        setState({ 
-            loading: true, 
-            total : 0,
-            projects: [] 
+        setState({
+            loading: true,
+            total: 0,
+            projects: []
         });
         new_params.offset = 0;
         setOffset(0);
@@ -166,7 +167,14 @@ export default function MainTable({ search }) {
                 }}
             // ref={tableEl}
             >
-                <Table stickyHeader>
+                <Table
+                    stickyHeader
+                    sx={{
+                        "& .MuiTableRow-root:hover": {
+                            backgroundColor: alpha('#919EAB', 0.2)
+                        }
+                    }}
+                >
 
                     <MainHead paramsCallback={paramsCallback} />
 
@@ -179,7 +187,7 @@ export default function MainTable({ search }) {
                                 contributions,
                                 developers,
                                 activity_growth,
-                                commits 
+                                commits
                             } = item;
 
                             let activeDevelopersPercentage;
@@ -205,186 +213,189 @@ export default function MainTable({ search }) {
 
                             return (
                                 <React.Fragment key={id}>
-                                <TableRow
-                                    key={id}
-                                    tabIndex={-1}
-                                >
-
-                                    <TableCell
-                                        align="left"
-                                        component="th"
-                                        scope="row"
-                                        padding="none"
-                                        sx={{
-                                            height: '7rem',
-                                            paddingLeft: '3rem',
-                                            border: 'none'
-                                        }}
+                                    <TableRow
+                                        key={id}
+                                        tabIndex={-1}
                                     >
-                                        <Typography
-                                            variant="subtitle2"
-                                            noWrap
+
+                                        <TableCell
+                                            align="left"
+                                            component="th"
+                                            scope="row"
+                                            padding="none"
                                             sx={{
-                                                maxWidth: {
-                                                    xxl: '12rem',
-                                                    xl: '12rem',
-                                                    lg: '10rem',
-                                                    md: '75%',
-                                                    sm: '75%'
-                                                },
-                                                whiteSpace: 'nowrap',
-                                                overflow: 'hidden',
-                                                textOverflow: 'ellipsis',
-                                            }}
-                                        >
-                                            {name}
-                                        </Typography>
-                                    </TableCell>
-
-                                    <TableCell
-                                        align="left"
-                                        component="th"
-                                        scope="row"
-                                        padding="none"
-                                    >
-
-                                        {is_core_project ?
-                                            (
-                                                <img
-                                                    src={Core}
-                                                    alt="Core"
-                                                />
-                                            ) :
-                                            (
-                                                <img
-                                                    src={Comunity}
-                                                    alt="Comunity"
-                                                />
-                                            )
-                                        }
-                                    </TableCell>
-
-                                    <TableCell
-                                        align="left"
-                                        component="th"
-                                        scope="row"
-                                        padding="none"
-                                        sx={{
-                                            border: 'none'
-                                        }}
-                                    >
-                                        <Typography
-                                            variant="subtitle2"
-                                            noWrap
-                                            sx={{
-                                                maxWidth: { xl: '18rem', lg: '10rem' },
-                                                whiteSpace: 'nowrap',
-                                                overflow: 'hidden',
-                                                textOverflow: 'ellipsis',
-                                            }}
-                                        >
-                                            {fNumber(developers)}
-                                        </Typography>
-                                    </TableCell>
-
-                                    <TableCell
-                                        align="left"
-                                        component="th"
-                                        scope="row"
-                                        padding="none"
-                                        sx={{
-                                            border: 'none'
-                                        }}
-                                    >
-                                        <Stack
-                                            direction="row"
-                                            alignItems="center"
-                                            sx={{
-                                                width: '12rem',
+                                                height: '5rem',
+                                                paddingLeft: '3rem',
+                                                border: 'none'
                                             }}
                                         >
                                             <Typography
                                                 variant="subtitle2"
                                                 noWrap
-                                                sx={{ marginLeft: "auto" }}
+                                                sx={{
+                                                    maxWidth: {
+                                                        xxl: '12rem',
+                                                        xl: '12rem',
+                                                        lg: '10rem',
+                                                        md: '75%',
+                                                        sm: '75%'
+                                                    },
+                                                    whiteSpace: 'nowrap',
+                                                    overflow: 'hidden',
+                                                    textOverflow: 'ellipsis',
+                                                }}
                                             >
-                                                {active_contributors}
+                                                {name}
                                             </Typography>
-                                        </Stack>
-                                        <Box
+                                        </TableCell>
+
+                                        <TableCell
+                                            align="left"
+                                            component="th"
+                                            scope="row"
+                                            padding="none"
                                             sx={{
-                                                width: '100%',
+                                                border: 'none'
                                             }}
                                         >
-                                            <StyledLinearProgress
+
+                                            {is_core_project ?
+                                                (
+                                                    <img
+                                                        src={Core}
+                                                        alt="Core"
+                                                    />
+                                                ) :
+                                                (
+                                                    <img
+                                                        src={Comunity}
+                                                        alt="Comunity"
+                                                    />
+                                                )
+                                            }
+                                        </TableCell>
+
+                                        <TableCell
+                                            align="left"
+                                            component="th"
+                                            scope="row"
+                                            padding="none"
+                                            sx={{
+                                                border: 'none'
+                                            }}
+                                        >
+                                            <Typography
+                                                variant="subtitle2"
+                                                noWrap
+                                                sx={{
+                                                    maxWidth: { xl: '18rem', lg: '10rem' },
+                                                    whiteSpace: 'nowrap',
+                                                    overflow: 'hidden',
+                                                    textOverflow: 'ellipsis',
+                                                }}
+                                            >
+                                                {fNumber(developers)}
+                                            </Typography>
+                                        </TableCell>
+
+                                        <TableCell
+                                            align="left"
+                                            component="th"
+                                            scope="row"
+                                            padding="none"
+                                            sx={{
+                                                border: 'none'
+                                            }}
+                                        >
+                                            <Stack
+                                                direction="row"
+                                                alignItems="center"
                                                 sx={{
                                                     width: '12rem',
-                                                    height: '0.4rem',
-                                                    borderRadius: 5,
-                                                    marginBottom: '1.45rem'
                                                 }}
-                                                variant='determinate'
-                                                value={activeDevelopersPercentage}
-                                            />
-                                        </Box>
-                                    </TableCell>
-
-                                    <TableCell
-                                        align="left"
-                                        component="th"
-                                        scope="row"
-                                        padding="none"
-                                        sx={{
-                                            border: 'none'
-                                        }}
-                                    >
-                                        <Typography variant="subtitle2" noWrap>
-                                            {fNumber(contributions)}
-                                        </Typography>
-                                    </TableCell>
-
-                                    <TableCell
-                                        align="left"
-                                        component="th"
-                                        scope="row"
-                                        padding="none"
-                                        sx={{
-                                            border: 'none'
-                                        }}
-                                    >
-                                        { /*(activity_growth > 0 || activity_growth < 0) && */ (
-                                            <Stack direction="row">
-                                                <img
-                                                    src={(growth_trend == true) ? CirleRise : CirleFall}
-                                                    alt="rise"
-                                                    style={{
-                                                        height: '1.5rem',
-                                                        marginRight: '0.5rem'
-                                                    }}
-                                                />
+                                            >
                                                 <Typography
                                                     variant="subtitle2"
                                                     noWrap
-                                                    sx={{
-                                                        marginTop: '0.2rem'
-                                                    }}
+                                                    sx={{ marginLeft: "auto" }}
                                                 >
-                                                    {`${(growth_trend == true) ? '+' : ''}${activity_growth}%`}
+                                                    {active_contributors}
                                                 </Typography>
                                             </Stack>
-                                        )}
-                                    </TableCell>
+                                            <Box
+                                                sx={{
+                                                    width: '100%',
+                                                }}
+                                            >
+                                                <StyledLinearProgress
+                                                    sx={{
+                                                        width: '12rem',
+                                                        height: '0.4rem',
+                                                        borderRadius: 5,
+                                                        marginBottom: '1.45rem'
+                                                    }}
+                                                    variant='determinate'
+                                                    value={activeDevelopersPercentage}
+                                                />
+                                            </Box>
+                                        </TableCell>
 
-                                    <TableCell
-                                        align="left"
-                                        component="th"
-                                        scope="row"
-                                        padding="none"
-                                        sx={{
-                                            border: 'none',
-                                            paddingRight: '3rem',
-                                        }}
-                                    >
+                                        <TableCell
+                                            align="left"
+                                            component="th"
+                                            scope="row"
+                                            padding="none"
+                                            sx={{
+                                                border: 'none'
+                                            }}
+                                        >
+                                            <Typography variant="subtitle2" noWrap>
+                                                {fNumber(contributions)}
+                                            </Typography>
+                                        </TableCell>
+
+                                        <TableCell
+                                            align="left"
+                                            component="th"
+                                            scope="row"
+                                            padding="none"
+                                            sx={{
+                                                border: 'none'
+                                            }}
+                                        >
+                                            { /*(activity_growth > 0 || activity_growth < 0) && */ (
+                                                <Stack direction="row">
+                                                    <img
+                                                        src={(growth_trend == true) ? CirleRise : CirleFall}
+                                                        alt="rise"
+                                                        style={{
+                                                            height: '1.5rem',
+                                                            marginRight: '0.5rem'
+                                                        }}
+                                                    />
+                                                    <Typography
+                                                        variant="subtitle2"
+                                                        noWrap
+                                                        sx={{
+                                                            marginTop: '0.2rem'
+                                                        }}
+                                                    >
+                                                        {`${(growth_trend == true) ? '+' : ''}${activity_growth}%`}
+                                                    </Typography>
+                                                </Stack>
+                                            )}
+                                        </TableCell>
+
+                                        <TableCell
+                                            align="left"
+                                            component="th"
+                                            scope="row"
+                                            padding="none"
+                                            sx={{
+                                                border: 'none',
+                                                paddingRight: '3rem',
+                                            }}
+                                        >
                                             <ReactApexChart
                                                 type="line"
                                                 series={[
@@ -397,14 +408,14 @@ export default function MainTable({ search }) {
                                                 height={75}
                                                 width={125}
                                             />
-                                    </TableCell>
+                                        </TableCell>
 
-                                </TableRow>
-                                <Waypoint onEnter={handleWaypointEnter} />
+                                    </TableRow>
+                                    <Waypoint onEnter={handleWaypointEnter} />
                                 </React.Fragment>
                             );
                         })}
-                        
+
                     </TableBody>
 
 

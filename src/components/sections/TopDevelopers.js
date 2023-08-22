@@ -66,13 +66,13 @@ function ContributorItem({ item }) {
  */
 function TopDevelopers() {
     const [state, setState] = useState({
-        loading: true, 
+        loading: true,
         top_contributors: []
-      });
+    });
 
-    const [selectedValue, setSelectedValue] = useState(3); 
-    
-      useEffect(() => {
+    const [selectedValue, setSelectedValue] = useState(3);
+
+    useEffect(() => {
         const client = new Client();
         let endpoint = 'top_contributors';
         if (selectedValue == 1) {
@@ -82,13 +82,13 @@ function TopDevelopers() {
         }
 
         client.get(endpoint).then((response) => {
-          let top_contributors = response;
-          setState({
-            loading: false,
-            top_contributors: top_contributors.slice(0, 10),
-          });
+            let top_contributors = response;
+            setState({
+                loading: false,
+                top_contributors: top_contributors.slice(0, 10),
+            });
         });
-      }, [selectedValue, setState]);
+    }, [selectedValue, setState]);
 
     const handleSelectChange = (event) => {
         setSelectedValue(event.target.value);
@@ -196,10 +196,10 @@ function TopDevelopers() {
                     }
                 }}
             />
-            <Stack spacing={5} sx={{ pl: 3, pr: 0, height: '25.25rem', overflowY: 'scroll' }}>
-            {state.top_contributors?.map((item) => (
-                <ContributorItem key={item.dev_name} item={item} />
-            ))} 
+            <Stack spacing={5} sx={{ p: 5, pt: 3.5, pr: 0, height: '25.25rem', overflowY: 'scroll' }}>
+                {state.top_contributors?.map((item) => (
+                    <ContributorItem key={item.dev_name} item={item} />
+                ))}
             </Stack>
         </Card>
     );
