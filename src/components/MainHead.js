@@ -70,7 +70,7 @@ export default function MainHead({ paramsCallback }) {
 
     const handleSortDevelopers = () => {
         paramsCallback({ sortBy: 'developers', sortType: isDescDevelopers ? 'asc' : 'desc' });
-        
+
         setIsDescName(true);
         setIsDescDevelopers(!isDescDevelopers);
         setIsDescActiveDevs(true);
@@ -81,7 +81,7 @@ export default function MainHead({ paramsCallback }) {
 
     const handleSortActiveDevs = () => {
         paramsCallback({ sortBy: 'active_contributors', sortType: isDescActiveDevs ? 'asc' : 'desc' });
-        
+
         setIsDescName(true);
         setIsDescDevelopers(true);
         setIsDescActiveDevs(!isDescActiveDevs);
@@ -92,7 +92,7 @@ export default function MainHead({ paramsCallback }) {
 
     const handleSortContributions = () => {
         paramsCallback({ sortBy: 'contributions', sortType: isDescContributions ? 'asc' : 'desc' });
-        
+
         setIsDescName(true);
         setIsDescDevelopers(true);
         setIsDescActiveDevs(true);
@@ -103,7 +103,7 @@ export default function MainHead({ paramsCallback }) {
 
     const handleSortActivityGr = () => {
         paramsCallback({ sortBy: 'activity_growth', sortType: isDescActivityGr ? 'asc' : 'desc' });
-        
+
         setIsDescName(true);
         setIsDescDevelopers(true);
         setIsDescActiveDevs(true);
@@ -114,7 +114,7 @@ export default function MainHead({ paramsCallback }) {
 
     const handleSortActivity = () => {
         paramsCallback({ sortBy: 'activity_growth', sortType: isDescActivity ? 'asc' : 'desc' });
-        
+
         setIsDescName(true);
         setIsDescDevelopers(true);
         setIsDescActiveDevs(true);
@@ -127,7 +127,7 @@ export default function MainHead({ paramsCallback }) {
         <TableHead>
             <TableRow
                 sx={{
-                    height: '4rem',
+                    height: '4.25rem',
                 }}
             >
                 <TableCell
@@ -216,7 +216,7 @@ export default function MainHead({ paramsCallback }) {
                             Ecosystem
                         </Typography>
 
-                        <EcosystemTriangle paramsCallback={paramsCallback}/>
+                        <EcosystemTriangle paramsCallback={paramsCallback} />
                     </Stack>
                 </TableCell>
 

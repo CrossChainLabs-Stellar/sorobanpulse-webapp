@@ -105,6 +105,9 @@ export default function MainTable({ search }) {
             show: false
         },
         colors: ["#67A161"],
+        tooltip: {
+            enabled: false,
+        },
     });
 
     const chartOptionsRosu = merge(CustomChart(), {
@@ -136,6 +139,9 @@ export default function MainTable({ search }) {
             show: false
         },
         colors: ["#CA1A0D"],
+        tooltip: {
+            enabled: false,
+        },
     });
 
     const paramsCallback = (new_params) => {
@@ -319,7 +325,7 @@ export default function MainTable({ search }) {
                                                     noWrap
                                                     sx={{ marginLeft: "auto" }}
                                                 >
-                                                    {active_contributors}
+                                                    {`${Math.round(activeDevelopersPercentage)}%`}
                                                 </Typography>
                                             </Stack>
                                             <Box
@@ -380,7 +386,7 @@ export default function MainTable({ search }) {
                                                             marginTop: '0.2rem'
                                                         }}
                                                     >
-                                                        {`${(growth_trend == true) ? '+' : ''}${activity_growth}%`}
+                                                        {`${(growth_trend == true) ? '+' : ''}${Math.round(activity_growth * 10) / 10}%`}
                                                     </Typography>
                                                 </Stack>
                                             )}
@@ -400,7 +406,7 @@ export default function MainTable({ search }) {
                                                 type="line"
                                                 series={[
                                                     {
-                                                        name: "Desktops",
+                                                        name: "Activity",
                                                         data: activity//activity ? activity : [],
                                                     },
                                                 ]}

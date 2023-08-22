@@ -1,4 +1,5 @@
 import s from './s.module.css';
+import { Link } from '@mui/material';
 
 export default function Footer() {
     return (
@@ -8,7 +9,15 @@ export default function Footer() {
                     Contact: <span className={s.contact}>team@crosschainlabs.tech</span>
                 </span>
             </nav>
-            <span className={s.item}>Powered by CrossChain Labs</span>
+            <Link
+                className={s.item}
+                href="https://www.crosschainlabs.tech/"
+                target="_blank"
+                rel="noopener"
+
+            >
+                Powered by CrossChain Labs
+            </Link>
         </footer>
     );
 }
