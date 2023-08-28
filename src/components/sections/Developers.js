@@ -47,7 +47,7 @@ function Developers() {
     const chartOptions = merge(CustomChart(), {
         colors: [
             "#EFD136",
-            "#3E3385",
+            "#002E5D",
         ],
         chart: {
             width: 500
@@ -98,10 +98,10 @@ function Developers() {
                 title={
                     <Stack direction='column'>
                         <Typography
-                            variant='h6'
                             sx={{
                                 fontWeight: 600,
                                 marginX: '1.4rem',
+                                fontSize: '20px',
                             }}
                         >
                             Developers
@@ -111,6 +111,7 @@ function Developers() {
                             sx={{
                                 color: 'text.secondary',
                                 marginX: '1.4rem',
+                                fontSize: '16px',
                             }}
                         >
                             last 30 days

@@ -62,14 +62,14 @@ function ActiveProjects() {
         xaxis: {
             categories: state.categories,
         },
-        colors: ["#ffe54b", "#493ba4"],
+        colors: ["#FDDA24", "#002E5D"],
         // stroke: {
         //   width: 2,
         //   colors: ["#F15A24", '#F2C1B0'],
         // },
         markers: {
-            colors: ["#ffe54b", "#493ba4"],
-            strokeColors: ["#ffe54b", "#493ba4"],
+            colors: ["#FDDA24", "#002E5D"],
+            strokeColors: ["#FDDA24", "#002E5D"],
         },
     });
 
@@ -83,10 +83,10 @@ function ActiveProjects() {
             <CardHeader title={
                 <Stack direction='column'>
                     <Typography
-                        variant='h6'
                         sx={{
                             marginX: '1.4rem',
-                            fontWeight: 600
+                            fontWeight: 600,
+                            fontSize: '20px',
                         }}
                     >
                         Active projects
@@ -96,7 +96,7 @@ function ActiveProjects() {
                         sx={{
                             marginX: '1.4rem',
                             color: 'text.secondary',
-                            fontSize: '14px',
+                            fontSize: '16px',
                         }}
                     >
                         There are now {number(state.total)} monthly active projects in the ecosystem

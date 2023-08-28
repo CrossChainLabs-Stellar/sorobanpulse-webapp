@@ -51,11 +51,11 @@ export default function ProjectsTable() {
                 justifyContent="space-between"
             >
                 <Typography
-                    variant='h6'
                     sx={{
                         fontWeight: 600,
                         marginTop: '2.5rem',
-                        marginLeft: '2.75rem'
+                        marginLeft: '2.75rem',
+                        fontSize: '20px'
                     }}
                 >
                     Projects on Soroban

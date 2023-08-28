@@ -8,7 +8,7 @@ export default function SorobanBox() {
             sx={{
                 marginTop: '5rem',
                 height: '4rem',
-                backgroundColor: "#ffeb75",
+                backgroundColor: "#FDDA24",
                 width: '100%',
                 display: 'flex',
                 justifyContent: 'center',
@@ -17,10 +17,10 @@ export default function SorobanBox() {
             }}
         >
             <Typography
-                variant='h6'
                 sx={{
                     fontWeight: 600,
-                    color: '#3E3385'
+                    color: '#002E5D',
+                    fontSize: '20px',
                 }}
             >
                 Soroban's ecosystem activity

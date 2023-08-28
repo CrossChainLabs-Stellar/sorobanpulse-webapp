@@ -97,9 +97,9 @@ export default function EcosystemTriangle({ paramsCallback }) {
                     >
                         <Typography
                             noWrap
-                            variant='h6'
                             sx={{
                                 fontWeight: '500',
+                                fontSize: '20px',
                             }}
                         >
                             Filter by ecosystem

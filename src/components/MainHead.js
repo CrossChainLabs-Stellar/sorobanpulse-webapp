@@ -144,7 +144,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '7.5rem'
                         // },
                         width: '20%',
-                        backgroundColor: "#FFEC8D",
+                        backgroundColor: "#FDDA24",
                         paddingLeft: '3rem',
                         borderTopLeftRadius: '10px',
                         borderBottomLeftRadius: '10px',
@@ -158,9 +158,9 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 16,
+                                fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#3E3385'
+                                color: '#002E5D'
                             }}
                         >
                             Project name
@@ -197,7 +197,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '10rem',
                         // },
                         width: '12%',
-                        backgroundColor: "#FFEC8D"
+                        backgroundColor: "#FDDA24"
                     }}
                 >
                     <Stack
@@ -208,9 +208,9 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 16,
+                                fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#3E3385'
+                                color: '#002E5D'
                             }}
                         >
                             Ecosystem
@@ -234,7 +234,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '10rem',
                         // },
                         width: '13%',
-                        backgroundColor: "#FFEC8D"
+                        backgroundColor: "#FDDA24"
                     }}
                 >
                     <Stack
@@ -245,8 +245,8 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 16,
-                                color: '#3E3385',
+                                fontSize: 17,
+                                color: '#002E5D',
                                 marginRight: '0.35rem',
                             }}
                         >
@@ -284,7 +284,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '15rem'
                         // },
                         width: '20%',
-                        backgroundColor: "#FFEC8D",
+                        backgroundColor: "#FDDA24",
                     }}
                 >
                     <Stack
@@ -297,9 +297,9 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 16,
+                                fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#3E3385'
+                                color: '#002E5D'
                             }}
                         >
                             Active developers
@@ -325,8 +325,8 @@ export default function MainHead({ paramsCallback }) {
                         sx={{
                             fontWeight: 450,
                             marginTop: 0,
-                            fontSize: 12,
-                            color: '#3E3385'
+                            fontSize: 13,
+                            color: '#002E5D'
                         }}
                     >
                         last 30 days
@@ -347,7 +347,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '10rem'
                         // },
                         width: '13%',
-                        backgroundColor: "#FFEC8D",
+                        backgroundColor: "#FDDA24",
                     }}
                 >
                     <Stack
@@ -358,9 +358,9 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 16,
+                                fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#3E3385'
+                                color: '#002E5D'
                             }}
                         >
                             Contributions
@@ -398,7 +398,7 @@ export default function MainHead({ paramsCallback }) {
                         //     md: '12rem'
                         // },
                         width: '12%',
-                        backgroundColor: "#FFEC8D",
+                        backgroundColor: "#FDDA24",
                     }}
                 >
                     <Stack
@@ -411,9 +411,9 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 16,
+                                fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#3E3385'
+                                color: '#002E5D'
                             }}
                         >
                             Activity growth
@@ -439,8 +439,8 @@ export default function MainHead({ paramsCallback }) {
                         sx={{
                             fontWeight: 450,
                             marginTop: 0,
-                            fontSize: 12,
-                            color: '#3E3385'
+                            fontSize: 13,
+                            color: '#002E5D'
                         }}
                     >
                         last 6 months
@@ -455,7 +455,7 @@ export default function MainHead({ paramsCallback }) {
                     sx={{
                         borderTopRightRadius: '10px',
                         borderBottomRightRadius: '10px',
-                        backgroundColor: "#FFEC8D",
+                        backgroundColor: "#FDDA24",
                         paddingRight: '3rem',
                     }}
                 >
@@ -469,9 +469,9 @@ export default function MainHead({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: 500,
-                                fontSize: 16,
+                                fontSize: 17,
                                 marginRight: '0.35rem',
-                                color: '#3E3385'
+                                color: '#002E5D'
                             }}
                         >
                             Activity
@@ -497,8 +497,8 @@ export default function MainHead({ paramsCallback }) {
                         sx={{
                             fontWeight: 450,
                             marginTop: 0,
-                            fontSize: 12,
-                            color: '#3E3385'
+                            fontSize: 13,
+                            color: '#002E5D'
                         }}
                     >
                         last 6 months

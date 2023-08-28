@@ -62,12 +62,12 @@ function ActiveDevelopers() {
         xaxis: {
             categories: state.categories,
             lables: {
-                colors: ["#ffe54b", "#493ba4"],
+                colors: ["#FDDA24", "#002E5D"],
             },
         },
-        colors: ["#ffe54b", "#493ba4"],
+        colors: ["#FDDA24", "#002E5D"],
         fill: {
-            colors: ["#ffe54b", "#493ba4"],
+            colors: ["#FDDA24", "#002E5D"],
             //colors: ["#F2C1B0", "#F15A24"],
         },
         // stroke: {
@@ -89,10 +89,10 @@ function ActiveDevelopers() {
                 title={
                     <Stack direction='column'>
                         <Typography
-                            variant='h6'
                             sx={{
                                 marginX: '1.4rem',
-                                fontWeight: 600
+                                fontWeight: 600,
+                                fontSize: '20px',
                             }}
                         >
                             Active developers
@@ -102,6 +102,7 @@ function ActiveDevelopers() {
                             sx={{
                                 marginX: '1.4rem',
                                 color: 'text.secondary',
+                                fontSize: '16px',
                             }}
                         >
                             There are now {number(state.total)} monthly active developers in the ecosystem

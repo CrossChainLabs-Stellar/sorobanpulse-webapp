@@ -134,10 +134,10 @@ function EcosystemGrowth() {
                 title={
                     <Stack direction='column'>
                         <Typography
-                            variant='h6'
                             sx={{
                                 marginX: '1.4rem',
-                                fontWeight: 600
+                                fontWeight: 600,
+                                fontSize: '20px',
                             }}
                         >
                             Ecosystem growth
@@ -147,7 +147,7 @@ function EcosystemGrowth() {
                             sx={{
                                 marginX: '1.4rem',
                                 color: 'text.secondary',
-                                fontSize: '14px',
+                                fontSize: '16px',
                             }}
                         >
                             last 6 months

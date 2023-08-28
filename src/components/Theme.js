@@ -14,7 +14,7 @@ export default createTheme({
             orange: `${arcOrange}`
         },
         primary: {
-            main: "#3E3385"
+            main: "#002E5D"
         },
         secondary: {
             main: `${arcOrange}`

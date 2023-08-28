@@ -63,14 +63,14 @@ function Contributions() {
         xaxis: {
             categories: state.categories,
         },
-        colors: ["#FFDF42", "#3E3385"],
+        colors: ["#FFDF42", "#002E5D"],
         // stroke: {
         //   width: 2,
         //   colors: ["#F15A24", '#F2C1B0'],
         // },
         markers: {
-            colors: ["#FFDF42", "#3E3385"],
-            strokeColors: ["#FFDF42", "#3E3385"],
+            colors: ["#FFDF42", "#002E5D"],
+            strokeColors: ["#FFDF42", "#002E5D"],
         },
     });
 
@@ -84,10 +84,10 @@ function Contributions() {
             <CardHeader title={
                 <Stack direction='column'>
                     <Typography
-                        variant='h6'
                         sx={{
                             fontWeight: 600,
                             marginX: '1.4rem',
+                            fontSize: '20px',
                         }}
                     >
                         Contributions
@@ -97,6 +97,7 @@ function Contributions() {
                         sx={{
                             marginX: '1.4rem',
                             color: 'text.secondary',
+                            fontSize: '16px',
                         }}
                     >
                         There are now {number(state.total)} monthly contributions in the ecosystem
