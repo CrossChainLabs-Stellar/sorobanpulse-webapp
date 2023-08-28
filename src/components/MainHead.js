@@ -143,7 +143,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '20%',
                         //     md: '7.5rem'
                         // },
-                        width: '20%',
+                        width: '28%',
                         backgroundColor: "#FDDA24",
                         paddingLeft: '3rem',
                         borderTopLeftRadius: '10px',
@@ -196,7 +196,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '12%',
                         //     md: '10rem',
                         // },
-                        width: '12%',
+                        width: '10%',
                         backgroundColor: "#FDDA24"
                     }}
                 >
@@ -233,7 +233,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '13%',
                         //     md: '10rem',
                         // },
-                        width: '13%',
+                        width: '10%',
                         backgroundColor: "#FDDA24"
                     }}
                 >
@@ -346,7 +346,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '13%',
                         //     md: '10rem'
                         // },
-                        width: '13%',
+                        width: '11%',
                         backgroundColor: "#FDDA24",
                     }}
                 >
@@ -397,7 +397,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '12%',
                         //     md: '12rem'
                         // },
-                        width: '12%',
+                        width: '11%',
                         backgroundColor: "#FDDA24",
                     }}
                 >

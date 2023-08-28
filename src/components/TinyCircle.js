@@ -3,6 +3,7 @@ import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
 import { styled } from '@mui/material/styles';
 import { CustomChart } from './chart';
+import { number } from '../utils/format';
 // import { useState, useEffect } from 'react';
 
 
@@ -26,11 +27,12 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
 function TinyCircle({ fillColor, innerProcent }) {
 
     const chartOptions = merge(CustomChart(), {
-        colors: [fillColor],
+        colors: ["#E9EBEE"],
         chart: {
             // width: 10,
             type: 'radialBar',
         },
+        labels: ['Active', 'Total'],
         legend: {
             show: false,
         },
@@ -58,8 +60,7 @@ function TinyCircle({ fillColor, innerProcent }) {
                 },
                 track: {
                     show: true,
-                    background: "#919EAB",
-                    opacity: 0.2,
+                    background: fillColor,
                 },
             },
         },
