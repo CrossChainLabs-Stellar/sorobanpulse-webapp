@@ -372,7 +372,7 @@ export default function MainTable({ search }) {
                                             { /*(activity_growth > 0 || activity_growth < 0) && */ (
                                                 <Stack direction="row">
                                                     <img
-                                                        src={(growth_trend == true) ? CirleRise : CirleFall}
+                                                        src={(growth_trend === true) ? CirleRise : CirleFall}
                                                         alt="rise"
                                                         style={{
                                                             height: '1.5rem',
@@ -386,7 +386,7 @@ export default function MainTable({ search }) {
                                                             marginTop: '0.2rem'
                                                         }}
                                                     >
-                                                        {`${(growth_trend == true) ? '+' : ''}${Math.round(activity_growth * 10) / 10}%`}
+                                                        {`${(growth_trend === true) ? '+' : ''}${Math.round(activity_growth * 10) / 10}%`}
                                                     </Typography>
                                                 </Stack>
                                             )}

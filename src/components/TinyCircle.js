@@ -3,7 +3,7 @@ import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
 import { styled } from '@mui/material/styles';
 import { CustomChart } from './chart';
-import { number } from '../utils/format';
+// import { number } from '../utils/format';
 // import { useState, useEffect } from 'react';
 
 
@@ -32,9 +32,16 @@ function TinyCircle({ fillColor, innerProcent }) {
             // width: 10,
             type: 'radialBar',
         },
-        labels: ['Active', 'Total'],
         legend: {
             show: false,
+        },
+        states: {
+            hover: {
+                filter: {
+                    type: 'none',
+                    value: 0,
+                }
+            },
         },
         plotOptions: {
             radialBar: {

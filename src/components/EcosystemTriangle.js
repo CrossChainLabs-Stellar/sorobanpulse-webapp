@@ -84,7 +84,7 @@ export default function EcosystemTriangle({ paramsCallback }) {
             >
                 <Box
                     sx={{
-                        width: '12rem',
+                        width: '18rem',
                         backgroundColor: '#fff',
                     }}
                 >
@@ -100,11 +100,12 @@ export default function EcosystemTriangle({ paramsCallback }) {
                             sx={{
                                 fontWeight: '500',
                                 fontSize: '20px',
+                                ml: '1rem',
                             }}
                         >
                             Filter by ecosystem
                         </Typography>
-                        <IconButton onClick={handleClose} style={{ marginLeft: 'auto' }}>
+                        <IconButton onClick={handleClose} sx={{ marginLeft: 'auto', mr: '0.5rem' }}>
                             <img src={x} alt='x' />
                         </IconButton>
                     </Stack>

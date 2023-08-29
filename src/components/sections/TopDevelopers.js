@@ -75,9 +75,9 @@ function TopDevelopers() {
     useEffect(() => {
         const client = new Client();
         let endpoint = 'top_contributors';
-        if (selectedValue == 1) {
+        if (selectedValue === 1) {
             endpoint += '?type=community';
-        } else if (selectedValue == 2) {
+        } else if (selectedValue === 2) {
             endpoint += '?type=core';
         }
 
