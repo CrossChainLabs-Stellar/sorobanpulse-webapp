@@ -80,7 +80,7 @@ export default function MainHead({ paramsCallback }) {
     }
 
     const handleSortActiveDevs = () => {
-        paramsCallback({ sortBy: 'active_contributors', sortType: isDescActiveDevs ? 'asc' : 'desc' });
+        paramsCallback({ sortBy: 'active_contributors_percentage', sortType: isDescActiveDevs ? 'asc' : 'desc' });
 
         setIsDescName(true);
         setIsDescDevelopers(true);

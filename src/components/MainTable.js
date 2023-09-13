@@ -192,16 +192,10 @@ export default function MainTable({ search }) {
                                 active_contributors,
                                 contributions,
                                 developers,
+                                active_contributors_percentage,
                                 activity_growth,
                                 commits
                             } = item;
-
-                            let activeDevelopersPercentage;
-                            if (active_contributors === 0) {
-                                activeDevelopersPercentage = 0;
-                            } else {
-                                activeDevelopersPercentage = (active_contributors / developers) * 100;
-                            }
 
                             let activity = [];
                             if (commits?.length) {
@@ -325,7 +319,7 @@ export default function MainTable({ search }) {
                                                     noWrap
                                                     sx={{ marginLeft: "auto" }}
                                                 >
-                                                    {`${Math.round(activeDevelopersPercentage)}%`}
+                                                    {`${Math.round(active_contributors_percentage)}%`}
                                                 </Typography>
                                             </Stack>
                                             <Box
@@ -341,7 +335,7 @@ export default function MainTable({ search }) {
                                                         marginBottom: '1.45rem'
                                                     }}
                                                     variant='determinate'
-                                                    value={activeDevelopersPercentage}
+                                                    value={active_contributors_percentage}
                                                 />
                                             </Box>
                                         </TableCell>
