@@ -111,7 +111,7 @@ function Developers() {
                             sx={{
                                 color: 'text.secondary',
                                 marginX: '1.4rem',
-                                fontSize: '16px',
+                                fontSize: '15px',
                             }}
                         >
                             last 30 days

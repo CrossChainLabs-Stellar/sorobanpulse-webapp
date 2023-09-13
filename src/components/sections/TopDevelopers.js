@@ -30,14 +30,14 @@ function ContributorItem({ item }) {
                     width: 45,
                     height: 45,
                     borderRadius: 1.5,
-                    marginLeft: '1rem'
+                    marginLeft: '1rem',
                 }}
             />
             <Box
                 sx={{
                     minWidth: {
                         xl: 200,
-                        lg: 100
+                        lg: 100,
                     },
                 }}
             >
@@ -47,14 +47,15 @@ function ContributorItem({ item }) {
                         color="inherit"
                         rel="noopener"
                         href={"https://github.com/" + dev_name}
-                        underline='none'
+                        underline='yes'
+                        fontSize={15}
                     >
                         {dev_name}
                     </Link>
                 </Typography>
             </Box>
             <Box flexGrow={2}></Box>
-            <Typography variant="caption" sx={{ pr: 3, flexShrink: 0, color: 'text.secondary' }}>
+            <Typography variant="caption" sx={{ pr: 3, flexShrink: 0, color: 'text.secondary', fontSize:14 }}>
                 {contributions} commits
             </Typography>
         </Stack>
@@ -111,14 +112,14 @@ function TopDevelopers() {
                                 fontSize: '20px',
                             }}
                         >
-                            Top developers
+                            Top 10 developers
                         </Typography>
                         <Typography
                             variant='caption'
                             sx={{
                                 color: 'text.secondary',
                                 marginX: '1.4rem',
-                                fontSize: '16px',
+                                fontSize: '15px',
                             }}
                         >
                             last 30 days

@@ -147,7 +147,7 @@ function EcosystemGrowth() {
                             sx={{
                                 marginX: '1.4rem',
                                 color: 'text.secondary',
-                                fontSize: '16px',
+                                fontSize: '15px',
                             }}
                         >
                             last 6 months
