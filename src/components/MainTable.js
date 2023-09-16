@@ -10,7 +10,9 @@ import {
     TableCell,
     Typography,
     TableContainer,
-    LinearProgress
+    LinearProgress,
+    Paper,
+    Link
 } from '@mui/material';
 
 import styled from '@emotion/styled';
@@ -43,6 +45,20 @@ const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
     }),
 );
 
+function SearchNotFound({ searchQuery = '', ...other }) {
+    return (
+      <Paper {...other}>
+        <Typography gutterBottom align="center" variant="subtitle1">
+          Not found
+        </Typography>
+        <Typography variant="body2" align="center">
+          No results found for &nbsp;
+          <strong>&quot;{searchQuery}&quot;</strong>. Try checking for typos or using complete words.
+        </Typography>
+      </Paper>
+    );
+  }
+
 
 export default function MainTable({ search }) {
     const [state, setState] = useState({
@@ -52,10 +68,21 @@ export default function MainTable({ search }) {
     });
     const [params, setParams] = useState({});
     const [offset, setOffset] = useState(0);
+    const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
         const client = new Client();
         params.offset = offset;
+
+        if (!search) {
+            params.search = undefined;
+        }
+        else if (params.search != search) {
+            params.search = search;
+            params.offset = 0;
+
+            setOffset(0);
+        }
 
         console.log(params);
 
@@ -73,6 +100,8 @@ export default function MainTable({ search }) {
                     projects: response?.list,
                 });
             }
+
+            setNotFound(response.list.length === 0 && search);
         });
     }, [search, params, offset, setState]);
 
@@ -245,7 +274,15 @@ export default function MainTable({ search }) {
                                                     textOverflow: 'ellipsis',
                                                 }}
                                             >
-                                                {name}
+                                                <Link
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                    href={"https://github.com/" + name}
+                                                    color="inherit"
+                                                    underline="none"
+                                                >
+                                                    {name}
+                                                </Link>
                                             </Typography>
                                         </TableCell>
 
@@ -419,7 +456,7 @@ export default function MainTable({ search }) {
                     </TableBody>
 
 
-                    {/* {isUserNotFound && !tableEmpty && !state.loading && (
+                    {notFound && !state.loading && (
                         <TableBody>
                             <TableRow>
                                 <TableCell align="center" colSpan={11} sx={{ py: 3 }}>
@@ -428,16 +465,6 @@ export default function MainTable({ search }) {
                             </TableRow>
                         </TableBody>
                     )}
-
-                    {tableEmpty && !state.loading && (
-                        <TableBody>
-                            <TableRow>
-                                <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
-                                    <TableEmpty />
-                                </TableCell>
-                            </TableRow>
-                        </TableBody>
-                    )} */}
                 </Table>
             </TableContainer>
         </>
