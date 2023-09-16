@@ -196,7 +196,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '12%',
                         //     md: '10rem',
                         // },
-                        width: '10%',
+                        width: '15%',
                         backgroundColor: "#FDDA24"
                     }}
                 >

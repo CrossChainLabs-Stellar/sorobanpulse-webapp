@@ -30,7 +30,7 @@ import mockData from '../mock/mockData';
 // assets
 import CirleRise from "../assets/CircleRise.svg";
 import CirleFall from "../assets/CircleFall.svg";
-import Comunity from "../assets/Community.svg";
+import Community from "../assets/Community.svg";
 import Core from "../assets/Core.svg";
 
 import { fNumber } from '../utils/format';
@@ -263,9 +263,9 @@ export default function MainTable({ search }) {
                                                 noWrap
                                                 sx={{
                                                     maxWidth: {
-                                                        xxl: '12rem',
-                                                        xl: '12rem',
-                                                        lg: '10rem',
+                                                        xxl: '20rem',
+                                                        xl: '20rem',
+                                                        lg: '20rem',
                                                         md: '75%',
                                                         sm: '75%'
                                                     },
@@ -279,7 +279,6 @@ export default function MainTable({ search }) {
                                                     rel="noopener"
                                                     href={"https://github.com/" + name}
                                                     color="inherit"
-                                                    underline="none"
                                                 >
                                                     {name}
                                                 </Link>
@@ -305,8 +304,8 @@ export default function MainTable({ search }) {
                                                 ) :
                                                 (
                                                     <img
-                                                        src={Comunity}
-                                                        alt="Comunity"
+                                                        src={Community}
+                                                        alt="Community"
                                                     />
                                                 )
                                             }

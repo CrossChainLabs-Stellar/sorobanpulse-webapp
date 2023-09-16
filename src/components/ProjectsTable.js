@@ -15,10 +15,8 @@ import {
 import Iconify from './Iconify';
 import MainTable from './MainTable';
 
+
 // assets
-
-
-
 const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
     height: '2.5rem',
     width: '15.625rem',
@@ -29,10 +27,6 @@ const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
         width: 200,
     }*/
 }));
-
-
-
-
 
 export default function ProjectsTable() {
 

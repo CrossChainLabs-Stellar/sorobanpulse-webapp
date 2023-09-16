@@ -84,7 +84,7 @@ export default function EcosystemTriangle({ paramsCallback }) {
             >
                 <Box
                     sx={{
-                        width: '18rem',
+                        width: '13rem',
                         backgroundColor: '#fff',
                     }}
                 >
@@ -99,7 +99,7 @@ export default function EcosystemTriangle({ paramsCallback }) {
                             noWrap
                             sx={{
                                 fontWeight: '500',
-                                fontSize: '20px',
+                                fontSize: '15px',
                                 ml: '1rem',
                             }}
                         >
@@ -109,7 +109,7 @@ export default function EcosystemTriangle({ paramsCallback }) {
                             <img src={x} alt='x' />
                         </IconButton>
                     </Stack>
-                    <Divider />
+                    
                     <Paper
                         sx={{
                             backgroundColor: "#fff",
@@ -117,7 +117,6 @@ export default function EcosystemTriangle({ paramsCallback }) {
                         }}
                     >
                         <List
-                            disablePadding={true}
                         >
                             <MenuItem
                                 sx={{
@@ -131,7 +130,7 @@ export default function EcosystemTriangle({ paramsCallback }) {
                                     alt="Community"
                                 />
                             </MenuItem>
-                            <Divider />
+                            
                             <MenuItem
                                 sx={{
                                     backgroundColor: '#FFFFFF',
