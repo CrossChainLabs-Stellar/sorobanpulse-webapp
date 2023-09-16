@@ -457,11 +457,13 @@ export default function MainTable({ search }) {
 
                     {notFound && !state.loading && (
                         <TableBody>
-                            <TableRow>
-                                <TableCell align="center" colSpan={11} sx={{ py: 3 }}>
-                                    <SearchNotFound searchQuery={search} />
-                                </TableCell>
-                            </TableRow>
+                            <React.Fragment>
+                                <TableRow>
+                                    <TableCell align="center" colSpan={11} sx={{ py: 3 }}>
+                                        <SearchNotFound searchQuery={search} />
+                                    </TableCell>
+                                </TableRow>
+                            </React.Fragment>
                         </TableBody>
                     )}
                 </Table>
