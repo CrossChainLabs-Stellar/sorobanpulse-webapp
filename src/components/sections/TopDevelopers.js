@@ -163,6 +163,7 @@ function TopDevelopers() {
                                 '&:hover': {
                                     backgroundColor: '#ffffff',
                                 },
+                                fontSize: '15px',
                             }}
                         >
                             {'Community'}
@@ -174,6 +175,7 @@ function TopDevelopers() {
                                 '&:hover': {
                                     backgroundColor: '#ffffff',
                                 },
+                                fontSize: '15px',
                             }}
                         >
                             {'Core'}
@@ -185,6 +187,7 @@ function TopDevelopers() {
                                 '&:hover': {
                                     backgroundColor: '#ffffff',
                                 },
+                                fontSize: '15px',
                             }}
                         >
                             {'All'}
