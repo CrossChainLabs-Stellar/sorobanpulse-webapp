@@ -1,14 +1,10 @@
 import s from './s.module.css';
 import { Link } from '@mui/material';
+import DiscordLogo from '../assets/discord-mark-blue.svg'
 
 export default function Footer() {
     return (
         <footer className={s.footer}>
-            <nav className={s.nav}>
-                <span className={s.item}>
-                    Contact: <span className={s.contact}>team@crosschainlabs.tech</span>
-                </span>
-            </nav>
             <Link
                 className={s.item}
                 href="https://www.crosschainlabs.tech/"
@@ -18,6 +14,7 @@ export default function Footer() {
             >
                 Powered by CrossChain Labs
             </Link>
+            <img src={DiscordLogo} alt='discord' style={{ width: '1.5rem' }} />
         </footer>
     );
 }

@@ -28,10 +28,9 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
     }
 }));
 
-/**
- * Pie chart that displays the number of issues.
- */
-function Developers() {
+
+
+const DAppsDonut = () => {
     const [state, setState] = useState({ loading: true, chartData: [0, 0] });
 
     useEffect(() => {
@@ -45,11 +44,11 @@ function Developers() {
     }, [setState]);
 
     const chartOptions = merge(CustomChart(), {
-        colors: ["#FFDF42", "#3E3385"],
+        colors: ["#FDDA24", "#3E3385"],
         chart: {
             width: 500
         },
-        labels: ['New', 'Active'],
+        labels: ['Soroban', 'Stellar'],
         stroke: {
             colors: ['#FFFFFF'],
             width: 10,
@@ -83,7 +82,6 @@ function Developers() {
             }
         },
     });
-
     return (
         <Card
             sx={{
@@ -127,7 +125,6 @@ function Developers() {
                 />
             </ChartWrapperStyle>
         </Card>
-    );
+    )
 }
-
-export default Developers;
+export default DAppsDonut

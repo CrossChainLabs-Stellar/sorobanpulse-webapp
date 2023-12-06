@@ -143,7 +143,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '20%',
                         //     md: '7.5rem'
                         // },
-                        width: '28%',
+                        width: '11%',
                         backgroundColor: "#FDDA24",
                         paddingLeft: '3rem',
                         borderTopLeftRadius: '10px',
@@ -163,7 +163,57 @@ export default function MainHead({ paramsCallback }) {
                                 color: '#002E5D'
                             }}
                         >
-                            Project name
+                            #
+                        </Typography>
+
+                        <IconButton
+                            id="basic-button"
+                            onClick={handleSortName}
+                            sx={{
+                                padding: 0,
+                                marginTop: '0.15rem'
+                            }}
+                        >
+                            <img
+                                src={triunghi}
+                                alt='triunghi'
+                                style={styleName}
+                            />
+                        </IconButton>
+                    </Stack>
+                </TableCell>
+
+                <TableCell
+                    align="left"
+                    component="th"
+                    scope="row"
+                    padding="none"
+                    sx={{
+                        // width: {
+                        //     xxl: '30rem',
+                        //     xl: '20rem',
+                        //     lg_xl: '18rem',
+                        //     lg: '20%',
+                        //     md: '7.5rem'
+                        // },
+                        width: '12%',
+                        backgroundColor: "#FDDA24",
+                    }}
+                >
+                    <Stack
+                        direction="row"
+                        alignItems="center"
+                    >
+                        <Typography
+                            noWrap
+                            sx={{
+                                fontWeight: 500,
+                                fontSize: 17,
+                                marginRight: '0.35rem',
+                                color: '#002E5D'
+                            }}
+                        >
+                            Dapp Name
                         </Typography>
 
                         <IconButton
@@ -196,7 +246,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '12%',
                         //     md: '10rem',
                         // },
-                        width: '15%',
+                        width: '11%',
                         backgroundColor: "#FDDA24"
                     }}
                 >
@@ -233,7 +283,7 @@ export default function MainHead({ paramsCallback }) {
                         //     lg: '13%',
                         //     md: '10rem',
                         // },
-                        width: '10%',
+                        width: '11%',
                         backgroundColor: "#FDDA24"
                     }}
                 >
@@ -277,13 +327,63 @@ export default function MainHead({ paramsCallback }) {
                     padding="none"
                     sx={{
                         // width: {
+                        //     xxl: '20rem',
+                        //     xl: '15rem',
+                        //     lg_xl: '14rem',
+                        //     lg: '13%',
+                        //     md: '10rem',
+                        // },
+                        width: '11%',
+                        backgroundColor: "#FDDA24"
+                    }}
+                >
+                    <Stack
+                        direction="row"
+                        alignItems="center"
+                    >
+                        <Typography
+                            noWrap
+                            sx={{
+                                fontWeight: 500,
+                                fontSize: 17,
+                                color: '#002E5D',
+                                marginRight: '0.35rem',
+                            }}
+                        >
+                            Contributions
+                        </Typography>
+
+                        <IconButton
+                            id="basic-button"
+                            onClick={handleSortDevelopers}
+                            sx={{
+                                padding: 0,
+                                marginTop: '0.15rem'
+                            }}
+                        >
+                            <img
+                                src={triunghi}
+                                alt='triunghi'
+                                style={styleDevelopers}
+                            />
+                        </IconButton>
+                    </Stack>
+                </TableCell>
+
+                <TableCell
+                    align="left"
+                    component="th"
+                    scope="row"
+                    padding="none"
+                    sx={{
+                        // width: {
                         //     xxl: '30rem',
                         //     xl: '20rem',
                         //     lg_xl: '20rem',
                         //     lg: '20%',
                         //     md: '15rem'
                         // },
-                        width: '20%',
+                        width: '11%',
                         backgroundColor: "#FDDA24",
                     }}
                 >
@@ -302,7 +402,7 @@ export default function MainHead({ paramsCallback }) {
                                 color: '#002E5D'
                             }}
                         >
-                            Active developers
+                            Development
                         </Typography>
 
                         <IconButton
@@ -329,7 +429,7 @@ export default function MainHead({ paramsCallback }) {
                             color: '#002E5D'
                         }}
                     >
-                        last 30 days
+                        activity (12m)
                     </Typography>
                 </TableCell>
 
@@ -363,7 +463,7 @@ export default function MainHead({ paramsCallback }) {
                                 color: '#002E5D'
                             }}
                         >
-                            Contributions
+                            State Expiration
                         </Typography>
 
                         <IconButton
@@ -404,7 +504,6 @@ export default function MainHead({ paramsCallback }) {
                     <Stack
                         direction="row"
                         alignItems="center"
-                        sx={{ marginTop: '1.2rem', }}
                     >
 
                         <Typography
@@ -416,7 +515,7 @@ export default function MainHead({ paramsCallback }) {
                                 color: '#002E5D'
                             }}
                         >
-                            Activity growth
+                            Expiration date
                         </Typography>
 
                         <IconButton
@@ -434,17 +533,6 @@ export default function MainHead({ paramsCallback }) {
                             />
                         </IconButton>
                     </Stack>
-                    <Typography
-                        noWrap
-                        sx={{
-                            fontWeight: 450,
-                            marginTop: 0,
-                            fontSize: 13,
-                            color: '#002E5D'
-                        }}
-                    >
-                        last 6 months
-                    </Typography>
                 </TableCell>
 
                 <TableCell
@@ -462,7 +550,6 @@ export default function MainHead({ paramsCallback }) {
                     <Stack
                         direction="row"
                         alignItems="center"
-                        sx={{ marginTop: '1.2rem', }}
                     >
 
                         <Typography
@@ -474,7 +561,7 @@ export default function MainHead({ paramsCallback }) {
                                 color: '#002E5D'
                             }}
                         >
-                            Activity
+                            X / Twitter
                         </Typography>
 
                         <IconButton
@@ -492,17 +579,6 @@ export default function MainHead({ paramsCallback }) {
                             />
                         </IconButton>
                     </Stack>
-                    <Typography
-                        noWrap
-                        sx={{
-                            fontWeight: 450,
-                            marginTop: 0,
-                            fontSize: 13,
-                            color: '#002E5D'
-                        }}
-                    >
-                        last 6 months
-                    </Typography>
                 </TableCell>
 
 

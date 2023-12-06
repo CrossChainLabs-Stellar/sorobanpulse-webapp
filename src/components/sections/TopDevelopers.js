@@ -55,7 +55,7 @@ function ContributorItem({ item }) {
                 </Typography>
             </Box>
             <Box flexGrow={2}></Box>
-            <Typography variant="caption" sx={{ pr: 3, flexShrink: 0, color: 'text.secondary', fontSize:14 }}>
+            <Typography variant="caption" sx={{ pr: 3, flexShrink: 0, color: 'text.secondary', fontSize: 14 }}>
                 {contributions} commits
             </Typography>
         </Stack>
@@ -98,7 +98,7 @@ function TopDevelopers() {
     return (
         <Card
             sx={{
-                marginTop: '3rem',
+                marginTop: '4rem',
                 boxShadow: '0px 4px 4px 0px #00000040',
             }}
         >
@@ -112,7 +112,7 @@ function TopDevelopers() {
                                 fontSize: '20px',
                             }}
                         >
-                            Top 10 developers
+                            Top developers
                         </Typography>
                         <Typography
                             variant='caption'

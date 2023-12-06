@@ -108,7 +108,7 @@ function ActiveProjects() {
                     type="line"
                     series={state.data}
                     options={chartOptions}
-                    height={366}
+                    height={363}
                 // width={1110}
                 />
             </Box>

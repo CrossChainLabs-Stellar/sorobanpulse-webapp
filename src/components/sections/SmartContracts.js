@@ -28,10 +28,9 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
     }
 }));
 
-/**
- * Pie chart that displays the number of issues.
- */
-function Developers() {
+
+
+const SmartContracts = () => {
     const [state, setState] = useState({ loading: true, chartData: [0, 0] });
 
     useEffect(() => {
@@ -45,14 +44,14 @@ function Developers() {
     }, [setState]);
 
     const chartOptions = merge(CustomChart(), {
-        colors: ["#FFDF42", "#3E3385"],
+        colors: ["#BBB4DD", "#FBE46E"],
         chart: {
             width: 500
         },
-        labels: ['New', 'Active'],
+        labels: ['Active', 'Expiring Soon'],
         stroke: {
-            colors: ['#FFFFFF'],
-            width: 10,
+            colors: ['#fff'],
+            width: 5,
         },
         legend: { floating: true, horizontalAlign: 'center' },
         tooltip: {
@@ -64,24 +63,24 @@ function Developers() {
                 }
             }
         },
-        plotOptions: {
-            pie: {
-                donut: {
-                    size: '85%',
-                    labels: {
-                        value: {
-                            formatter: (val) => number(val)
-                        },
-                        total: {
-                            formatter: (w) => {
-                                const sum = w.globals.seriesTotals.reduce((a, b) => a + b, 0);
-                                return number(sum);
-                            }
-                        }
-                    }
-                }
-            }
-        },
+        // plotOptions: {
+        //     pie: {
+        //         donut: {
+        //             size: '85%',
+        //             labels: {
+        //                 value: {
+        //                     formatter: (val) => number(val)
+        //                 },
+        //                 total: {
+        //                     formatter: (w) => {
+        //                         const sum = w.globals.seriesTotals.reduce((a, b) => a + b, 0);
+        //                         return number(sum);
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // },
     });
 
     return (
@@ -101,7 +100,7 @@ function Developers() {
                                 fontSize: '20px',
                             }}
                         >
-                            Developers
+                            Smart contracts
                         </Typography>
                         <Typography
                             variant='caption'
@@ -111,7 +110,7 @@ function Developers() {
                                 fontSize: '15px',
                             }}
                         >
-                            last 30 days
+                            next 30 days
                         </Typography>
                     </Stack>
                 }
@@ -120,14 +119,13 @@ function Developers() {
             <ChartWrapperStyle dir="ltr">
                 {/* <ReactApexChart type="donut" series={state.chartData} options={chartOptions} height={310} /> */}
                 <ReactApexChart
-                    type="donut"
+                    type="pie"
                     series={state.chartData}
                     options={chartOptions}
                     height={310}
                 />
             </ChartWrapperStyle>
         </Card>
-    );
+    )
 }
-
-export default Developers;
+export default SmartContracts;

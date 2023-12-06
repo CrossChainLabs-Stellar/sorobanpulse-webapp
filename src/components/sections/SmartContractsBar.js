@@ -1,4 +1,4 @@
-/** @module CommitsChart **/
+/** @module EcosystemChart **/
 import merge from 'lodash/merge';
 import { useState, useEffect } from 'react';
 import ReactApexChart from 'react-apexcharts';
@@ -7,17 +7,16 @@ import { CustomChart } from '../chart'
 import { Client } from '../../utils/client';
 import { number } from '../../utils/format';
 
-/**
- * Bar chart that displays the number of contributors for each month over the last year.
- */
-function ActiveDevelopers() {
+
+
+const SmartContractsBar = () => {
     const [state, setState] = useState({
         loading: true,
         categories: [],
         total: 0,
         data: [
-            { name: 'Core', data: [] },
-            { name: 'Community ', data: [] }
+            { name: 'Active', data: [] },
+            { name: 'Expired ', data: [] }
         ]
     });
 
@@ -51,24 +50,33 @@ function ActiveDevelopers() {
                 categories: categories,
                 total: total,
                 data: [
-                    { name: 'Core', data: coreData },
-                    { name: 'Community', data: ecosystemData }
+                    { name: 'Active', data: coreData },
+                    { name: 'Expired', data: ecosystemData }
                 ]
             });
         });
     }, [setState]);
 
     const chartOptions = merge(CustomChart(), {
+        chart: {
+            stacked: true,
+        },
         xaxis: {
             categories: state.categories,
             lables: {
-                colors: ["#FFDF42", "#3E3385"],
+                colors: ["#FDDA24", "#BBB4DD"],
             },
         },
-        colors: ["#FFDF42", "#3E3385"],
+        colors: ["#FDDA24", "#BBB4DD"],
         fill: {
-            colors: ["#FFDF42", "#3E3385"],
+            colors: ["#FDDA24", "#BBB4DD"],
             //colors: ["#F2C1B0", "#F15A24"],
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                borderRadius: 0,
+            },
         },
         // stroke: {
         //   width: 2,
@@ -95,17 +103,7 @@ function ActiveDevelopers() {
                                 fontSize: '20px',
                             }}
                         >
-                            Active developers
-                        </Typography>
-                        <Typography
-                            variant='caption'
-                            sx={{
-                                marginX: '1.4rem',
-                                color: 'text.secondary',
-                                fontSize: '16px',
-                            }}
-                        >
-                            There are now {number(state.total)} monthly active developers in the ecosystem
+                            Soroban Smart Contracts
                         </Typography>
                     </Stack>
                 }
@@ -116,11 +114,10 @@ function ActiveDevelopers() {
                     type="bar"
                     series={state.data}
                     options={chartOptions}
-                    height={364}
+                    height={390}
                 />
             </Box>
         </Card>
-    );
+    )
 }
-
-export default ActiveDevelopers;
+export default SmartContractsBar

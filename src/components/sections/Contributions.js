@@ -63,14 +63,14 @@ function Contributions() {
         xaxis: {
             categories: state.categories,
         },
-        colors: ["#FFDF42", "#002E5D"],
+        colors: ["#FFDF42", "#3E3385"],
         // stroke: {
         //   width: 2,
         //   colors: ["#F15A24", '#F2C1B0'],
         // },
         markers: {
-            colors: ["#FFDF42", "#002E5D"],
-            strokeColors: ["#FFDF42", "#002E5D"],
+            colors: ["#FFDF42", "#3E3385"],
+            strokeColors: ["#FFDF42", "#3E3385"],
         },
     });
 

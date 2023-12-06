@@ -28,8 +28,8 @@ import ReactApexChart from 'react-apexcharts';
 import mockData from '../mock/mockData';
 
 // assets
-import CirleRise from "../assets/CircleRise.svg";
-import CirleFall from "../assets/CircleFall.svg";
+import App1 from "../assets/placeholderAppsLogos/App1.svg";
+import EcosystemLogo1 from "../assets/ecosystems/EcosystemLogo1.svg";
 import Community from "../assets/Community.svg";
 import Core from "../assets/Core.svg";
 
@@ -47,17 +47,17 @@ const StyledLinearProgress = styled((props) => <LinearProgress {...props} />)(
 
 function SearchNotFound({ searchQuery = '', ...other }) {
     return (
-      <Paper {...other}>
-        <Typography gutterBottom align="center" variant="subtitle1">
-          Not found
-        </Typography>
-        <Typography variant="body2" align="center">
-          No results found for &nbsp;
-          <strong>&quot;{searchQuery}&quot;</strong>. Try checking for typos or using complete words.
-        </Typography>
-      </Paper>
+        <Paper {...other}>
+            <Typography gutterBottom align="center" variant="subtitle1">
+                Not found
+            </Typography>
+            <Typography variant="body2" align="center">
+                No results found for &nbsp;
+                <strong>&quot;{searchQuery}&quot;</strong>. Try checking for typos or using complete words.
+            </Typography>
+        </Paper>
     );
-  }
+}
 
 
 export default function MainTable({ search }) {
@@ -246,7 +246,6 @@ export default function MainTable({ search }) {
                                         key={id}
                                         tabIndex={-1}
                                     >
-
                                         <TableCell
                                             align="left"
                                             component="th"
@@ -274,15 +273,48 @@ export default function MainTable({ search }) {
                                                     textOverflow: 'ellipsis',
                                                 }}
                                             >
-                                                <Link
-                                                    target="_blank"
-                                                    rel="noopener"
-                                                    href={"https://github.com/" + name}
-                                                    color="inherit"
-                                                >
-                                                    {name}
-                                                </Link>
+                                                1
                                             </Typography>
+                                        </TableCell>
+
+                                        <TableCell
+                                            align="left"
+                                            component="th"
+                                            scope="row"
+                                            padding="none"
+                                            sx={{
+                                                height: '5rem',
+                                                border: 'none'
+                                            }}
+                                        >
+                                            <Stack direction='row' alignItems='center'>
+                                                <img src={App1} alt="app1" style={{ marginRight: '1rem' }} />
+                                                <Typography
+                                                    variant="subtitle2"
+                                                    noWrap
+                                                    sx={{
+                                                        maxWidth: {
+                                                            xxl: '14rem',
+                                                            xl: '14rem',
+                                                            lg: '14rem',
+                                                            md: '75%',
+                                                            sm: '75%'
+                                                        },
+                                                        whiteSpace: 'nowrap',
+                                                        overflow: 'hidden',
+                                                        textOverflow: 'ellipsis',
+                                                    }}
+                                                >
+                                                    <Link
+                                                        target="_blank"
+                                                        rel="noopener"
+                                                        href={"https://github.com/" + name}
+                                                        color="inherit"
+                                                    >
+                                                        {name}
+                                                    </Link>
+                                                </Typography>
+                                            </Stack>
                                         </TableCell>
 
                                         <TableCell
@@ -295,20 +327,7 @@ export default function MainTable({ search }) {
                                             }}
                                         >
 
-                                            {is_core_project ?
-                                                (
-                                                    <img
-                                                        src={Core}
-                                                        alt="Core"
-                                                    />
-                                                ) :
-                                                (
-                                                    <img
-                                                        src={Community}
-                                                        alt="Community"
-                                                    />
-                                                )
-                                            }
+                                            <img src={EcosystemLogo1} alt="app1" style={{ width: '2rem' }} />
                                         </TableCell>
 
                                         <TableCell
@@ -343,83 +362,18 @@ export default function MainTable({ search }) {
                                                 border: 'none'
                                             }}
                                         >
-                                            <Stack
-                                                direction="row"
-                                                alignItems="center"
+                                            <Typography
+                                                variant="subtitle2"
+                                                noWrap
                                                 sx={{
-                                                    width: '12rem',
+                                                    maxWidth: { xl: '18rem', lg: '10rem' },
+                                                    whiteSpace: 'nowrap',
+                                                    overflow: 'hidden',
+                                                    textOverflow: 'ellipsis',
                                                 }}
                                             >
-                                                <Typography
-                                                    variant="subtitle2"
-                                                    noWrap
-                                                    sx={{ marginLeft: "auto" }}
-                                                >
-                                                    {`${Math.round(active_contributors_percentage)}%`}
-                                                </Typography>
-                                            </Stack>
-                                            <Box
-                                                sx={{
-                                                    width: '100%',
-                                                }}
-                                            >
-                                                <StyledLinearProgress
-                                                    sx={{
-                                                        width: '12rem',
-                                                        height: '0.4rem',
-                                                        borderRadius: 5,
-                                                        marginBottom: '1.45rem'
-                                                    }}
-                                                    variant='determinate'
-                                                    value={active_contributors_percentage}
-                                                />
-                                            </Box>
-                                        </TableCell>
-
-                                        <TableCell
-                                            align="left"
-                                            component="th"
-                                            scope="row"
-                                            padding="none"
-                                            sx={{
-                                                border: 'none'
-                                            }}
-                                        >
-                                            <Typography variant="subtitle2" noWrap>
-                                                {fNumber(contributions)}
+                                                {fNumber(developers)}
                                             </Typography>
-                                        </TableCell>
-
-                                        <TableCell
-                                            align="left"
-                                            component="th"
-                                            scope="row"
-                                            padding="none"
-                                            sx={{
-                                                border: 'none'
-                                            }}
-                                        >
-                                            { /*(activity_growth > 0 || activity_growth < 0) && */ (
-                                                <Stack direction="row">
-                                                    <img
-                                                        src={(growth_trend === true) ? CirleRise : CirleFall}
-                                                        alt="rise"
-                                                        style={{
-                                                            height: '1.5rem',
-                                                            marginRight: '0.5rem'
-                                                        }}
-                                                    />
-                                                    <Typography
-                                                        variant="subtitle2"
-                                                        noWrap
-                                                        sx={{
-                                                            marginTop: '0.2rem'
-                                                        }}
-                                                    >
-                                                        {`${(growth_trend === true) ? '+' : ''}${Math.round(activity_growth * 10) / 10}%`}
-                                                    </Typography>
-                                                </Stack>
-                                            )}
                                         </TableCell>
 
                                         <TableCell
@@ -445,6 +399,52 @@ export default function MainTable({ search }) {
                                                 width={125}
                                             />
                                         </TableCell>
+
+                                        <TableCell
+                                            align="left"
+                                            component="th"
+                                            scope="row"
+                                            padding="none"
+                                            sx={{
+                                                border: 'none'
+                                            }}
+                                        >
+                                            <Typography variant="subtitle2" noWrap>
+                                                {fNumber(contributions)} days
+                                            </Typography>
+                                        </TableCell>
+
+
+
+                                        <TableCell
+                                            align="left"
+                                            component="th"
+                                            scope="row"
+                                            padding="none"
+                                            sx={{
+                                                border: 'none'
+                                            }}
+                                        >
+                                            <Typography variant="subtitle2" noWrap>
+                                                01/05/2024
+                                            </Typography>
+                                        </TableCell>
+
+                                        <TableCell
+                                            align="left"
+                                            component="th"
+                                            scope="row"
+                                            padding="none"
+                                            sx={{
+                                                border: 'none'
+                                            }}
+                                        >
+                                            <Typography variant="subtitle2" noWrap>
+                                                2 followers
+                                            </Typography>
+                                        </TableCell>
+
+
 
                                     </TableRow>
                                     <Waypoint onEnter={handleWaypointEnter} />

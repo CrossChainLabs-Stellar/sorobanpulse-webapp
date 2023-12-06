@@ -1,30 +1,25 @@
-import React from 'react'
+import { Box, Typography, Tab, Tabs } from '@mui/material'
 
-import { Box, Typography } from '@mui/material'
+export default function SorobanBox({ value, handleChange }) {
 
-export default function SorobanBox() {
+
     return (
         <Box
             sx={{
                 marginTop: '5rem',
-                height: '4rem',
-                backgroundColor: "#FDDA24",
+                height: '3rem',
+                backgroundColor: "#2A2A2A",
                 width: '100%',
                 display: 'flex',
-                justifyContent: 'center',
                 alignItems: 'center',
-                boxShadow: '0px 4px 4px 0px #00000040',
+                boxShadow: 0,
             }}
         >
-            <Typography
-                sx={{
-                    fontWeight: 600,
-                    color: '#002E5D',
-                    fontSize: '20px',
-                }}
-            >
-                Soroban's ecosystem activity
-            </Typography>
+            <Tabs value={value} onChange={handleChange} sx={{ marginLeft: '2rem', }}>
+                <Tab label="DApps" sx={{ textTransform: 'none' }} />
+                <Tab label="Stellar Highlights" sx={{ textTransform: 'none' }} />
+                <Tab label="Soroban Metrics" sx={{ textTransform: 'none' }} />
+            </Tabs>
         </Box>
     )
 }
