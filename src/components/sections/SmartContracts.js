@@ -44,7 +44,7 @@ const SmartContracts = () => {
     }, [setState]);
 
     const chartOptions = merge(CustomChart(), {
-        colors: ["#BBB4DD", "#FBE46E"],
+        colors: ["#3E3385", "#FDDA24"],
         chart: {
             width: 500
         },

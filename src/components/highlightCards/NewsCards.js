@@ -11,7 +11,8 @@ const NewsCards = ({ titleShort, titleLong, text, mainColor, secondaryColor }) =
                 padding: '2rem',
                 width: '22rem',
                 height: '25rem',
-                borderRadius: '5px'
+                borderRadius: '5px',
+                boxShadow: 1
             }}
         >
             <Stack direction='row' alignItems='center'>
@@ -26,7 +27,8 @@ const NewsCards = ({ titleShort, titleLong, text, mainColor, secondaryColor }) =
             <Box
                 sx={{
                     backgroundColor: secondaryColor,
-                    padding: '1rem'
+                    padding: '1rem',
+                    boxShadow: 1
                 }}
             >
                 <Typography sx={{ color: mainColor }}>

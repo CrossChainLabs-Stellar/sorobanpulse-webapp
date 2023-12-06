@@ -64,12 +64,12 @@ const SmartContractsBar = () => {
         xaxis: {
             categories: state.categories,
             lables: {
-                colors: ["#FDDA24", "#BBB4DD"],
+                colors: ["#FDDA24", "#3E3385"],
             },
         },
-        colors: ["#FDDA24", "#BBB4DD"],
+        colors: ["#FDDA24", "#3E3385"],
         fill: {
-            colors: ["#FDDA24", "#BBB4DD"],
+            colors: ["#FDDA24", "#3E3385"],
             //colors: ["#F2C1B0", "#F15A24"],
         },
         plotOptions: {

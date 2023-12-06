@@ -5,10 +5,7 @@ import TopCard from "./highlightCards/TopCard";
 import NewsCards from "./highlightCards/NewsCards";
 
 const HighlightsPage = () => {
-    const mapper = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    const [counter, setCounter] = useState(0);
-    const [currentMainColor, setCurrentMainColor] = useState("#000");
-    const [currentSecondaryColor, setCurrentSecondaryColor] = useState("#fff");
+    const mapper = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     return (
         <Box sx={{
 
@@ -184,17 +181,33 @@ const HighlightsPage = () => {
                 }}
             >
                 {mapper.map((item, index) => {
-                    return (
-                        <Grid item xs={12} md={12} lg={3} key={index}>
-                            <NewsCards
-                                titleShort='Crypto News'
-                                titleLong='Stellar initiates security audits for imminent Soroban smart contracts platform'
-                                text='The Stellar Development Foundation is set to enhance its blockchain offerings with Soroban, a new smart contract platform, currently in...'
-                                mainColor='#000'
-                                secondaryColor='#fff'
-                            />
-                        </Grid>
-                    )
+                    if ((index - (Math.floor(index / 4) + (Math.floor((index + 4) / 4) % 2)) * 4) < 0) {
+                        return (
+                            <Grid item xs={12} md={12} lg={3} key={index}>
+                                <NewsCards
+                                    titleShort='Crypto News'
+                                    titleLong='Stellar initiates security audits for imminent Soroban smart contracts platform'
+                                    text='The Stellar Development Foundation is set to enhance its blockchain offerings with Soroban, a new smart contract platform, currently in...'
+                                    mainColor='#000'
+                                    secondaryColor='#fff'
+                                />
+                            </Grid>
+                        )
+                    }
+                    else {
+                        return (
+                            <Grid item xs={12} md={12} lg={3} key={index}>
+                                <NewsCards
+                                    titleShort='Crypto News'
+                                    titleLong='Stellar initiates security audits for imminent Soroban smart contracts platform'
+                                    text='The Stellar Development Foundation is set to enhance its blockchain offerings with Soroban, a new smart contract platform, currently in...'
+                                    mainColor='#fff'
+                                    secondaryColor='#000'
+                                />
+                            </Grid>
+                        )
+                    }
+
                 })}
             </Grid>
 
