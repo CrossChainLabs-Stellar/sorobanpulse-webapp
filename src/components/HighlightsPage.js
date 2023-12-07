@@ -181,7 +181,7 @@ const HighlightsPage = () => {
                 }}
             >
                 {mapper.map((item, index) => {
-                    if ((index - (Math.floor(index / 4) + (Math.floor((index + 4) / 4) % 2)) * 4) < 0) {
+                    if (index % 8 < 4) {
                         return (
                             <Grid item xs={12} md={12} lg={3} key={index}>
                                 <NewsCards
